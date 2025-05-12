@@ -1,0 +1,49 @@
+// если вы хотите использовать sass-переменные - удалите root
+// colors
+:root {
+  // base
+  --font-family: "ChakraPetch", sans-serif;
+  --content-width: 1200px;
+  --container-offset: 16px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+  // colors
+	--main-colors-purple: #ca6aeb;
+	--main-colors-blue: #19b5f1;
+	--greyscale-black-100: #18181b;
+	--greyscale-black-80: #252532;
+	--greyscale-grey-1: #b0b0b2;
+	--greyscale-grey-2: #d1d1d1;
+	--greyscale-white: #fff;
+	--alerts-success: #00c566;
+	--alerts-error: #ff4747;
+	--alerts-warning: #facc15;
+
+  // focus
+  --outline: 1px dashed currentColor;
+  --outlineOffset: 3px;
+
+  // шрифты
+  // fw fz / lh
+  --Heading-1: 600 64px / 64px var(--font-family);
+  --Heading-2: 600 48px / 58px var(--font-family);
+  --Heading-3: 600 40px / 58px var(--font-family);
+  --Heading-4: 500 36px / 44px var(--font-family);
+  --Heading-5: 600 32px / 32px var(--font-family);
+  --Heading-6: 600 28px / 28px var(--font-family);
+  --Heading-7: 400 20px / 20px var(--font-family);
+  --Heading-8: 500 20px / 20px var(--font-family);
+  --Heading-9: 400 18px / 18px var(--font-family);
+  --Heading-10: 600 16px / 28px var(--font-family);
+  --Heading-11: 600 16px / 16px var(--font-family);
+  --Heading-12: 400 14px / 14px var(--font-family);
+  --Body-1: 300 16px / 28px var(--font-family);
+  --Body-2: 400 14px / 28px var(--font-family);
+  --Body-3: 400 16px / 28px var(--font-family);
+  --Body-4: 400 12px / 20px var(--font-family);
+  --Caption-1: 500 16px / 16px var(--font-family);
+  --Caption-2: 500 14px / 20px var(--font-family);
+  --Caption-3: 500 10px / 14px var(--font-family);
+  --Button-1: 700 14px / 14px var(--font-family);
+  --Button-2: 300 16px / 28px var(--font-family);
+}
