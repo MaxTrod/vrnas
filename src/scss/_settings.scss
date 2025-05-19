@@ -115,3 +115,9 @@ a {
 .page--ios .dis-scroll {
   position: relative;
 }
+
+.grid {
+  display: grid;
+  column-gap: 32px;
+  grid-template-columns: repeat(12, 1fr);
+}

@@ -69,6 +69,7 @@
     "rellax": "^1.12.1",
     "simplebar": "^6.2.5",
     "swiped-events": "^1.1.9",
-    "swiper": "latest"
+    "swiper": "latest",
+    "transfer-elements": "^1.0.7"
   }
 }

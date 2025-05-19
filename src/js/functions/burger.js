@@ -2,12 +2,14 @@ import { disableScroll } from '../functions/disable-scroll.js';
 import { enableScroll } from '../functions/enable-scroll.js';
 
 (function(){
+  const header = document.querySelector('.header');
   const burger = document?.querySelector('[data-burger]');
   const menu = document?.querySelector('[data-menu]');
   const menuItems = document?.querySelectorAll('[data-menu-item]');
   const overlay = document?.querySelector('[data-menu-overlay]');
 
   burger?.addEventListener('click', (e) => {
+    header?.classList.toggle('header--active');
     burger?.classList.toggle('burger--active');
     menu?.classList.toggle('menu--active');
 
@@ -27,6 +29,7 @@ import { enableScroll } from '../functions/enable-scroll.js';
     burger?.setAttribute('aria-label', 'Открыть меню');
     burger.classList.remove('burger--active');
     menu.classList.remove('menu--active');
+    header.classList.remove('header--active');
     enableScroll();
   });
 
@@ -36,6 +39,7 @@ import { enableScroll } from '../functions/enable-scroll.js';
       burger?.setAttribute('aria-label', 'Открыть меню');
       burger.classList.remove('burger--active');
       menu.classList.remove('menu--active');
+      header.classList.remove('header--active');
       enableScroll();
     });
   });

@@ -8,6 +8,7 @@
   --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
 
   // colors
+  --main-colors-linear: linear-gradient(90deg, #0cbaf1 0%, #e95ce9 100%);
 	--main-colors-purple: #ca6aeb;
 	--main-colors-blue: #19b5f1;
 	--greyscale-black-100: #18181b;

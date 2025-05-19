@@ -3,9 +3,16 @@
 @import "mixins";
 @import "fonts";
 @import "settings";
+@import "common";
 
-// подключения компонентов страницы
+// подключения малых компонентов страницы
+@import "./components/btn";
+@import "./components/header-block";
+@import "./components/modals";
+
+// подключения основных компонентов страницы
 @import "./components/header";
+@import "./components/hero";
 
 
 

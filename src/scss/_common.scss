@@ -1,0 +1,62 @@
+.logo {
+  transition: opacity 0.3s;
+
+  @include focus-visible;
+
+  @include hover {
+    opacity: 0.5;
+  }
+
+  &:active {
+    opacity: 0.2;
+  }
+}
+
+.advantages {
+  position: relative;
+  z-index: 2;
+
+		&__inner {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      padding: adaptive_px(36, 1232, 54) adaptive_px(36, 1232, 64);
+      background-color: var(--greyscale-black-80);
+      gap: 50px adaptive_px(25, 1232, 50);
+
+      @include small-tablet {
+        grid-template-columns: 1fr;
+      }
+    }
+
+		&__item {
+      padding-top: 100px;
+      background-position: 0 0;
+      background-repeat: no-repeat;
+
+      &--expertise {
+        background-image: url("../img/icons/expertise.svg");
+      }
+
+      &--customization {
+        background-image: url("../img/icons/customization.svg");
+      }
+
+      &--service {
+        background-image: url("../img/icons/service.svg");
+      }
+    }
+
+
+		&__title {
+      margin: 0;
+      margin-bottom: 17px;
+      font: var(--Heading-7);
+      color: var(--greyscale-white);
+    }
+
+		&__text {
+      margin: 0;
+      font: var(--Body-2);
+      color: var(--greyscale-grey-1);
+    }
+}
