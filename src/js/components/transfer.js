@@ -9,7 +9,7 @@ new TransferElements(
         targetPosition: 1
       }
     }
-  }
+  },
   // {
   //   sourceElement: document.querySelector('.content-hero__video'),
   //   breakpoints: {

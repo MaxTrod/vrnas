@@ -7,6 +7,7 @@
     overflow: hidden;
     width: 196px;
     height: 128px;
+    color: var(--main-colors-purple);
     background-color: #21232E;
 
     &::before {
@@ -23,6 +24,8 @@
       transform: translate(-50%, -50%);
       transition: width 0.3s, height 0.3s;
     }
+
+    @include focus-visible;
 
     @include hover {
       &::before {

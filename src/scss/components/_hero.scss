@@ -1,6 +1,14 @@
 .hero {
   position: relative;
   padding-top: 130px;
+  opacity: 0;
+  transform: scale(1.1);
+  transition: all 0.7s ease-out;
+
+  &.--watcher-view {
+    opacity: 1;
+    transform: scale(1);
+  }
 
   &::before,
   &::after {
@@ -113,16 +121,15 @@
 .content-hero {
   &__clients {
     display: flex;
-    // flex-wrap: wrap;
     opacity: 0;
-    transition: opacity 0.7s;
-    transition-delay: 1.1s;
+    transition: opacity 0.7s ease-out;
+    transition-delay: 1.8s;
     gap: 5px 15px;
 
     .--watcher-view & {
       opacity: 1;
-      transition: transform 0.7s, opacity 0.7s;
-      transition-delay: 1.1s;
+      transition: opacity 0.7s ease-out;
+      transition-delay: 1.8s;
     }
   }
 
@@ -193,14 +200,14 @@
   &__video {
     opacity: 0;
     transform: scale(0.5);
-    transition: opacity 0.7s,  transform 0.7s;
-    transition-delay: 1.4s;
+    transition: opacity 0.7s ease-out,  transform 0.7s ease-out;
+    transition-delay: 2.2s;
 
     .--watcher-view & {
       opacity: 1;
       transform: scale(1);
-      transition: opacity 0.7s,  transform 0.7s;
-      transition-delay: 1.4s;
+      transition: opacity 0.7s ease-out,  transform 0.7s ease-out;
+      transition-delay: 2.2s;
     }
 
     @include small-tablet {
