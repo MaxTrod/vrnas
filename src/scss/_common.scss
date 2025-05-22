@@ -15,13 +15,16 @@
 .advantages {
   position: relative;
   z-index: 2;
+  border-style: solid;
+  border-width: 1px;
+  border-image: var( --main-colors-linear-border) 1;
 
 		&__inner {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      padding: adaptive_px(36, 1232, 54) adaptive_px(36, 1232, 64);
+      padding: adaptive_px(50, 1232, 54) adaptive_px(36, 1232, 64);
       background-color: var(--greyscale-black-80);
-      gap: 50px adaptive_px(25, 1232, 50);
+      gap: 55px adaptive_px(25, 1232, 50);
 
       @include small-tablet {
         grid-template-columns: 1fr;

@@ -9,6 +9,9 @@
 
   // colors
   --main-colors-linear: linear-gradient(90deg, #0cbaf1 0%, #e95ce9 100%);
+  --main-colors-linear-transparent: linear-gradient(90deg, transparent 0%, transparent 100%);
+  --main-colors-linear-border: linear-gradient(90deg, rgba(255, 255, 255, 0.3) 0%, transparent 100%);
+  --main-colors-linear-blur: linear-gradient(180deg, rgba(37, 37, 50, 0) 0%, rgba(37, 37, 50, 0.91) 53.06%, #252532 100%);
 	--main-colors-purple: #ca6aeb;
 	--main-colors-blue: #19b5f1;
 	--greyscale-black-100: #18181b;
@@ -26,12 +29,12 @@
 
   // шрифты
   // fw fz / lh
-  --Heading-1: 600 64px / 64px var(--font-family);
+  --Heading-1: 600 64px / 83px var(--font-family);
   --Heading-2: 600 48px / 58px var(--font-family);
   --Heading-3: 600 40px / 58px var(--font-family);
   --Heading-4: 500 36px / 44px var(--font-family);
-  --Heading-5: 600 32px / 32px var(--font-family);
-  --Heading-6: 600 28px / 28px var(--font-family);
+  --Heading-5: 600 32px / 42px var(--font-family);
+  --Heading-6: 600 28px / 36px var(--font-family);
   --Heading-7: 400 20px / 20px var(--font-family);
   --Heading-8: 500 20px / 20px var(--font-family);
   --Heading-9: 400 18px / 18px var(--font-family);

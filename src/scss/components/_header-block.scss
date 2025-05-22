@@ -1,23 +1,47 @@
 .header-block {
+    &__label {
+    display: inline-block;
+    font: var(--Caption-1);
+    letter-spacing: 0.14em;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    background-image: var(--main-colors-linear);
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+
   &__title {
     margin: 0;
+    font: var(--Heading-2);
     color: var(--greyscale-white);
-    opacity: 0;
-    transform: translateY(50px);
-    transition: transform 0.7s ease-out, opacity 0.7s ease-out;
-    transition-delay: 0.6s;
 
-    .--watcher-view & {
-      opacity: 1;
-      transform: translateY(0);
-      transition: transform 0.7s ease-out, opacity 0.7s ease-out;
-      transition-delay: 0.6s;
+    // opacity: 0;
+    // transform: translateY(50px);
+    // transition: transform 0.7s ease-out, opacity 0.7s ease-out;
+    // transition-delay: 0.6s;
+
+    // .--watcher-view & {
+    //   opacity: 1;
+    //   transform: translateY(0);
+    //   transition: transform 0.7s ease-out, opacity 0.7s ease-out;
+    //   transition-delay: 0.6s;
+    // }
+
+    @include tablet {
+      font: var(--Heading-3);
+    }
+
+    @include small-tablet {
+      font: var(--Heading-5);
     }
 
     &--main {
       font: var(--Heading-1);
       font-size: adaptive_px(56, 1232, 64);
-      line-height: 83px;
       letter-spacing: -0.01em;
 
       @include tablet {
@@ -27,10 +51,10 @@
   }
 
   &__text {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: transform 0.7s ease-out, opacity 0.7s ease-out;
-    transition-delay: 1s;
+    // opacity: 0;
+    // transform: translateY(50px);
+    // transition: transform 0.7s ease-out, opacity 0.7s ease-out;
+    // transition-delay: 1s;
 
     p {
       margin: 0;
@@ -41,25 +65,25 @@
       }
     }
 
-    .--watcher-view & {
-      opacity: 1;
-      transform: translateY(0);
-      transition: transform 0.7s ease-out, opacity 0.7s ease-out;
-      transition-delay: 1s;
-    }
+    // .--watcher-view & {
+    //   opacity: 1;
+    //   transform: translateY(0);
+    //   transition: transform 0.7s ease-out, opacity 0.7s ease-out;
+    //   transition-delay: 1s;
+    // }
   }
 
   &__btn {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: transform 0.7s ease-out, opacity 0.7s ease-out;
-    transition-delay: 1.4s;
+    // opacity: 0;
+    // transform: translateY(50px);
+    // transition: transform 0.7s ease-out, opacity 0.7s ease-out;
+    // transition-delay: 1.4s;
 
-    .--watcher-view & {
-      opacity: 1;
-      transform: translateY(0);
-      transition: transform 0.7s ease-out, opacity 0.7s ease-out;
-      transition-delay: 1.4s;
-    }
+    // .--watcher-view & {
+    //   opacity: 1;
+    //   transform: translateY(0);
+    //   transition: transform 0.7s ease-out, opacity 0.7s ease-out;
+    //   transition-delay: 1.4s;
+    // }
   }
 }
