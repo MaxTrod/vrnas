@@ -5,3 +5,4 @@ import './components/modals.js';
 import './components/video.js';
 import './components/header-scroll.js';
 import './components/animation.js';
+import './components/accordeon.js';

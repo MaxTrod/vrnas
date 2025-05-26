@@ -1,6 +1,14 @@
 .service-section {
+  padding-top: 75px;
+  padding-bottom: 75px;
+
   --top1: 57px;
   --top2: 78px;
+
+  @include small-tablet {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
 
   &__header {
     padding-right: 42px;
@@ -8,16 +16,41 @@
     &:not(:last-child) {
       margin-bottom: 46px;
     }
+
+    @include tablet {
+      padding-right: 0;
+    }
+
+    @include small-tablet {
+      &:not(:last-child) {
+        margin-bottom: 24px;
+      }
+    }
   }
 
   .header-block {
     display: grid;
+    column-gap: 30px;
     grid-template-columns: auto 1fr;
+
+    @include small-tablet {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .header-block__title {
+    @include small-tablet {
+      margin-bottom: 12px;
+    }
   }
 
   .header-block__text {
     justify-self: end;
     max-width: 625px;
+
+    @include small-tablet {
+      justify-self: start;
+    }
   }
 
   &__items {
@@ -25,25 +58,100 @@
     grid-template-columns: repeat(3, 1fr);
     padding-bottom: calc(var(--top1) + var(--top2));
     gap: 32px 36px;
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+      padding-bottom: calc(var(--top1));
+      gap: 25px;
+    }
+
+    @include small-tablet {
+      grid-template-columns: 1fr;
+      padding-bottom: 0;
+    }
   }
 }
 
 .item-service {
   position: relative;
-  align-self: end;
   padding: 146px 32px 0;
   transition: all 0.3s;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 32px;
+    top: 38px;
+    z-index: 3;
+    width: 48px;
+    height: 48px;
+  }
+
+  &--development {
+    &::after {
+      background: url('../../img/svg-no-sprite/development.svg') 0 0 / cover no-repeat;
+    }
+  }
+
+  &--design {
+    &::after {
+      background: url('../../img/svg-no-sprite/design.svg') 0 0 / cover no-repeat;
+    }
+  }
+
+  &--consulting {
+    &::after {
+    background: url('../../img/svg-no-sprite/consulting.svg') 0 0 / cover no-repeat;
+    }
+  }
+
+  &--games {
+    &::after {
+    background: url('../../img/svg-no-sprite/games.svg') 0 0 / cover no-repeat;
+    }
+  }
+
+  &--events {
+    &::after {
+      background: url('../../img/svg-no-sprite/events.svg') 0 0 / cover no-repeat;
+    }
+  }
+
+  &--entertainment {
+    &::after {
+    background: url('../../img/svg-no-sprite/entertainment.svg') 0 0 / cover no-repeat;
+    }
+  }
+
+
 
   &:nth-child(3n-1) {
     top: var(--top1);
 
     // margin-top: var(--top1);
+    @include tablet {
+      top: 0;
+    }
   }
 
   &:nth-child(3n) {
     top: calc(var(--top1) + var(--top2));
 
     // margin-top: calc(var(--top1) + var(--top2));
+
+    @include tablet {
+      top: 0;
+    }
+  }
+
+  &:nth-child(2n) {
+    @include tablet {
+      top: var(--top1);
+    }
+
+    @include small-tablet {
+      top: 0;
+    }
   }
 
   &::before {
@@ -57,25 +165,6 @@
     background-color: var(--greyscale-black-80);
   }
 
-  &::after {
-    content: '';
-    position: absolute;
-    left: 32px;
-    top: 38px;
-    z-index: 3;
-    -webkit-mask-image: url('../img/sprite.svg#development');
-    mask-image: url('../img/sprite.svg#development');
-    -webkit-mask-position: center;
-    mask-position: center;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-size: cover;
-    mask-size: cover;
-    width: 48px;
-    height: 48px;
-    background-image: var(--main-colors-linear);
-
-  }
 
   &__decor {
     position: absolute;
@@ -112,7 +201,9 @@
   &__info {
     position: relative;
     z-index: 3;
-    padding-bottom: 51px;
+    // padding-bottom: 51px;
+    padding-bottom: 25px;
+    min-height: 145px;
 
     &::before {
       content: '';
@@ -125,6 +216,12 @@
       opacity: 0;
       transition: opacity 0.3s;
       pointer-events: none;
+    }
+
+    @include small-tablet {
+      &::before {
+        display: none;
+      }
     }
   }
 
@@ -139,6 +236,10 @@
     margin: 0;
     font: var(--Body-2);
     color: var(--greyscale-grey-1);
+
+    @media (any-hover: none) {
+      margin-bottom: 17px;
+    }
   }
 
   &__btn {
@@ -159,6 +260,15 @@
       color: var(--greyscale-white);
       transition: color 0.3s;
     }
+
+    @media (any-hover: none) {
+      position: relative;
+      left: 0;
+      bottom: 0;
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
+    }
   }
 
   @include hover {
@@ -176,6 +286,10 @@
       &::before {
         opacity: 1;
       }
+    }
+
+    .item-service__text {
+      margin-bottom: 0;
     }
 
     .item-service__btn {
