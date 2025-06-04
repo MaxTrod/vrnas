@@ -1,0 +1,13 @@
+.logo {
+  transition: opacity 0.3s;
+
+  @include focus-visible;
+
+  @include hover {
+    opacity: 0.5;
+  }
+
+  &:active {
+    opacity: 0.2;
+  }
+}

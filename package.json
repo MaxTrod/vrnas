@@ -32,7 +32,7 @@
     "gulp-file-include": "^2.3.0",
     "gulp-htmlmin": "^5.0.1",
     "gulp-if": "^3.0.0",
-    "gulp-imagemin": "^9.0.0",
+    "gulp-imagemin": "^7.1.0",
     "gulp-newer": "^1.4.0",
     "gulp-notify": "^4.0.0",
     "gulp-plumber": "^1.2.1",
@@ -61,6 +61,7 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
+    "@videojs/themes": "^1.0.1",
     "aos": "^2.3.4",
     "graph-modal": "^1.0.7",
     "graph-tabs": "^1.0.2",
@@ -70,6 +71,7 @@
     "simplebar": "^6.2.5",
     "swiped-events": "^1.1.9",
     "swiper": "latest",
-    "transfer-elements": "^1.0.7"
+    "transfer-elements": "^1.0.7",
+    "video.js": "^8.22.0"
   }
 }

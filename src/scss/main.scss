@@ -6,17 +6,22 @@
 @import "common";
 
 // подключения малых компонентов страницы
-@import "./components/btn";
-@import "./components/header-block";
-@import "./components/modals";
+@import "./partials/components/logo";
+@import "./partials/components/btn";
+@import "./partials/components/header-block";
+@import "./partials/components/advantages";
+@import "./partials/components/video-block";
+@import "./partials/components/social";
+@import "./partials/components/modals";
 
-// подключения основных компонентов страницы
-@import "./components/header";
-@import "./components/hero";
-@import "./components/about-section";
-@import "./components/service-section";
-@import "./components/choose-section";
-@import "./components/footer";
+// подключения общих секций и секций отдельных страниц
+@import "./partials/repeat-sections/header";
+@import "./partials/homepage/hero";
+@import "./partials/homepage/about-section";
+@import "./partials/repeat-sections/service-section";
+@import "./partials/homepage/choose-section";
+@import "./partials/homepage/start-section";
+@import "./partials/repeat-sections/footer";
 
 
 

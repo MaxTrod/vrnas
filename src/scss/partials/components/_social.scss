@@ -1,0 +1,85 @@
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    width: 45px;
+    height: 45px;
+    background-image: var(--main-colors-linear);
+
+    &--twitter {
+      .social__link {
+        svg {
+          width: 19px;
+          height: 15px;
+        }
+      }
+    }
+
+    &--facebook {
+      .social__link {
+        svg {
+          width: 10px;
+          height: 20px;
+        }
+      }
+    }
+
+    &--instagram {
+      .social__link {
+        svg {
+          width: 22px;
+          height: 22px;
+        }
+      }
+    }
+
+    &--github {
+      .social__link {
+        svg {
+          width: 21px;
+          height: 20px;
+        }
+      }
+    }
+
+  }
+
+  &__link {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: inherit;
+    width: 43px;
+    height: 43px;
+    color: var(--greyscale-white);
+    background-color: var(--greyscale-black-100);
+    transition: background-color 0.3s;
+
+    svg {
+      fill: currentColor;
+      transition: fill 0.3s;
+    }
+
+    @include focus-visible;
+
+    @include hover {
+      background-color: var(--main-colors-purple);
+    }
+
+    &:active {
+      svg {
+        fill: var(--greyscale-black-80);
+      }
+    }
+  }
+
+}

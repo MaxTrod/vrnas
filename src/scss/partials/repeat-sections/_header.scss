@@ -1,0 +1,259 @@
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  width: 100%;
+  min-height: 114px;
+  background-color: transparent;
+  transition: background-color 0.3s, min-height 0.5s;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: -120%;
+    top: 0;
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+    transition: background-color 0.3s, height 0.3s, left 0.3s;
+  }
+
+  &.--header-scroll,
+  &.--header-modal {
+    min-height: 80px;
+    background-color: var(--greyscale-black-100);
+  }
+
+  &.header--active {
+    background-color: var(--greyscale-black-100);
+
+    &::before {
+      left: 0;
+    }
+  }
+
+
+  &__container {
+    display: flex;
+    column-gap: 30px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    transition: min-height 0.3s;
+  }
+
+  &__logo {
+    position: relative;
+    z-index: 4;
+  }
+
+  &__buttons {
+    display: flex;
+  }
+
+  &__btn {
+    @include tablet {
+      align-self: flex-start;
+    }
+  }
+}
+
+.nav {
+  @include tablet {
+    position: fixed;
+    left: -120%;
+    top: 0;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    padding: 120px 30px 30px;
+    width: 100%;
+    height: 100%;
+    background-color: var(--greyscale-black-100);
+    transition: left 0.3s;
+    row-gap: 10px;
+
+    &.menu--active {
+      left: 0;
+    }
+  }
+
+  &__list {
+    display: flex;
+    column-gap: 64px;
+    flex-wrap: wrap;
+    padding-left: 20px;
+
+    @include tablet {
+      flex-direction: column;
+      padding-left: 0;
+      row-gap: 15px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    column-gap: 5px;
+    align-items: center;
+
+    @include tablet {
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+
+  &__link {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 175%;
+    color: var(--greyscale-white);
+    transition: color 0.3s;
+
+    @include small-tablet {
+      font-size: 20px;
+    }
+
+    @include focus-visible;
+
+    @include hover {
+      color: var(--main-colors-purple);
+    }
+
+    &:active {
+      color: var(--greyscale-black-80);
+    }
+  }
+
+  &__arrow {
+    position: relative;
+    padding: 5px;
+    color: var(--greyscale-white);
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      -webkit-mask-image: url('../img/sprite.svg#menu-arrow');
+      mask-image: url('../img/sprite.svg#menu-arrow');
+      -webkit-mask-position: center;
+      mask-position: center;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-size: cover;
+      mask-size: cover;
+      width: 6px;
+      height: 3.54px;
+      background-color: var(--greyscale-white);
+      transform: translate(-50%, -50%) scaleY(1);
+      transition: transform 0.3s, background-color 0.3s;
+    }
+
+    &--open {
+      &::before {
+        transform: translate(-50%, -50%) scaleY(-1);
+      }
+    }
+
+    @include focus-visible;
+
+    @include hover {
+      &::before {
+        background-color: var(--main-colors-purple);
+      }
+    }
+
+    @include tablet {
+      &::before {
+        width: 9px;
+        height: 6.54px;
+      }
+    }
+  }
+}
+
+.nav-sublist {
+  position: absolute;
+  left: -8px;
+  top: 30px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-style: solid;
+  border-width: 1px;
+  border-image: var(--main-colors-linear) 1;
+  padding: 10px;
+  min-width: 150px;
+  line-height: 0;
+  background-color: var(--greyscale-black-80);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  row-gap: 10px;
+
+  &--open {
+    overflow: visible;
+    line-height: 1;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @include tablet {
+    position: relative;
+    left: 0;
+    top: 0;
+    flex: 1 1 100%;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    row-gap: 0;
+
+    &--open {
+      border-top-width: 1px;
+      border-bottom-width: 1px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      row-gap: 15px;
+    }
+  }
+
+  &__link {
+    font-weight: 300;
+    font-size: 14px;
+    color: var(--greyscale-white);
+    transition: color 0.3s;
+
+    @include small-tablet {
+      font-size: 18px;
+    }
+
+    @include focus-visible;
+
+    @include hover {
+      color: var(--main-colors-purple);
+    }
+
+    &:active {
+      color: var(--greyscale-black-80);
+    }
+  }
+
+}
+
+.burger {
+  position: relative;
+  z-index: 4;
+  display: none;
+
+  @include tablet {
+    display: block;
+  }
+
+  @include burger;
+}

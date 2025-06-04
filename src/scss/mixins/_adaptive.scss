@@ -6,11 +6,11 @@ https://www.youtube.com/watch?v=hdvLnIteUoI
 
 // Пример функции для размеров в rem
 @function adaptive_rem($min, $width, $max) {
-	$min_rem: #{$min + rem};
-	$max_rem: #{$max + rem};
-	$width_vw: #{calc(round(($max * 16) / ($width / 100) * 100000) / 100000) + vw};
+  $min_rem: #{$min + rem};
+  $max_rem: #{$max + rem};
+  $width_vw: #{calc(round(($max * 16) / ($width / 100) * 100000) / 100000) + vw};
 
-	@return clamp($min_rem, $width_vw, $max_rem);
+  @return clamp($min_rem, $width_vw, $max_rem);
 }
 
 /*
@@ -20,11 +20,11 @@ font-size: clm_rem(1.5, 600, 2);
 
 // Пример функции для размеров в px
 @function adaptive_px($min, $width, $max) {
-	$min_px: #{$min + px};
-	$max_px: #{$max + px};
-	$width_vw: #{calc(round($max / ($width / 100) * 100000) / 100000) + vw};
+  $min_px: #{$min + px};
+  $max_px: #{$max + px};
+  $width_vw: #{calc(round($max / ($width / 100) * 100000) / 100000) + vw};
 
-	@return clamp($min_px, $width_vw, $max_px);
+  @return clamp($min_px, $width_vw, $max_px);
 }
 
 /*
