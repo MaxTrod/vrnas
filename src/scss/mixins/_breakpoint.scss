@@ -12,6 +12,12 @@
   }
 }
 
+@mixin big-desktop {
+  @media (max-width: (1440px)) {
+    @content;
+  }
+}
+
 @mixin desktop {
   @media (max-width: (1232px)) {
     @content;

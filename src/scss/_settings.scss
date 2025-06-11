@@ -14,7 +14,8 @@
 .page__body {
   margin: 0;
   height: 100%;
-  min-width: 430px;
+  min-width: var(--min-width);
+  // min-width: $minWidth;
   font-weight: 400;
   font-size: 16px;
   color: var(--greyscale-grey-1);
@@ -90,7 +91,8 @@ a {
 
 .container {
   margin: 0 auto;
-  padding: 0 var(--container-offset);
+  // padding: 0 var(--container-offset);
+  padding: 0 calc(var(--container-offset) / 2);
   max-width: var(--container-width);
 }
 

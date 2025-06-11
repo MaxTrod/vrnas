@@ -1,3 +1,5 @@
+@use "sass:math";
+
 // базовые подключения
 @import "vars";
 @import "mixins";
@@ -21,6 +23,7 @@
 @import "./partials/repeat-sections/service-section";
 @import "./partials/homepage/choose-section";
 @import "./partials/homepage/start-section";
+@import "./partials/repeat-sections/testimonial-section";
 @import "./partials/repeat-sections/footer";
 
 

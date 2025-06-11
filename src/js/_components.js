@@ -6,3 +6,4 @@ import './components/video.js';
 import './components/header-scroll.js';
 import './components/animation.js';
 import './components/accordeon.js';
+import './components/orbit.js';

@@ -3,9 +3,13 @@
 :root {
   // base
   --font-family: "ChakraPetch", sans-serif;
+  --min-width: 430px;
+  --template-width: 1440px;
   --content-width: 1200px;
-  --container-offset: 16px;
-  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+  // --container-offset: 16px;
+  --container-offset: 32px;
+  // --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+  --container-width: calc(var(--content-width) + var(--container-offset));
 
   // colors
   --main-colors-linear: linear-gradient(90deg, #0cbaf1 0%, #e95ce9 100%);
@@ -51,3 +55,24 @@
   --Button-1: 700 14px / 14px var(--font-family);
   --Button-2: 300 16px / 28px var(--font-family);
 }
+
+// scss variables for adaptiveValue mixin (insert the same sizes from css variables) ===============================================================================================================================================================================================================================================================================================
+
+// Мінімальна ширина сторінки
+$minWidth: 430px;
+// Ширина полотна (макету)
+$templateWidth: 1440px;
+// Ширина обмежуючого контейнера (0 = немає обмеження)
+$contentWidth: 1200px;
+// Загальний відступ у контейнера
+// (30 = по 15px ліворуч і праворуч, 0 = немає відступу)
+$containerOffset: 32px;
+
+// Ширина спрацьовування першого брейкпоінту
+$containerWidth: $contentWidth + $containerOffset;
+
+
+
+
+
+
