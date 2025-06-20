@@ -1,0 +1,362 @@
+.partners-section {
+  &__header {
+    &:not(:last-child) {
+      margin-bottom: 58px;
+    }
+  }
+}
+
+.partners-solar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__inner {
+    position: relative;
+    width: 1054px;
+    overflow: hidden;
+    // height: 742px;
+    @include adaptiveValue("height", 742px, 304px, 0, 1054px, 430px);
+    transition: height 0.3s;
+    // 312
+
+    &.full {
+      // height: 1054px;
+
+      // .partners-solar__orbit--1 {
+      //   &::after {
+      //     opacity: 0;
+      //     visibility: hidden;
+      //   }
+      // }
+
+      // .partners-solar__img-block {
+      //   bottom: 50%;
+      //   transform: translate(-50%, 50%);
+      // }
+
+      .partners-solar__wrap,
+      .partners-solar__item {
+        animation: none;
+        transform: rotate(0deg);
+      }
+    }
+  }
+
+  &__img-block {
+    z-index: 5;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    @include adaptiveValue("width", 707px, 288px, 0, 1054px, 430px);
+    @include adaptiveValue("height", 555px, 226px, 0, 1054px, 430px);
+    transform: translateX(-50%);
+    pointer-events: none;
+    transition:
+      bottom 1.2s,
+      transform 1.2s;
+
+    &::after {
+      content: "";
+      z-index: 3;
+      position: absolute;
+      right: -18%;
+      top: -10%;
+      z-index: 1;
+      width: 137%;
+      height: 112%;
+      background: url("../img/light.png") 0 0 / 100% 100% no-repeat;
+      pointer-events: none;
+    }
+  }
+
+  &__img {
+    position: relative;
+    z-index: 4;
+    object-fit: cover;
+  }
+
+  &__orbit {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    transition:
+      opacity 1.2s,
+      visibility 1.2s;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      // background: var(--main-colors-linear-border) border-box;
+      background-color: rgba(255, 255, 255, 0.17);
+      mask:
+        linear-gradient(#fff, #fff) padding-box,
+        linear-gradient(#fff, #fff);
+      mask-composite: exclude;
+      border: inherit;
+      border-radius: inherit;
+      transition: opacity 0.3s;
+    }
+
+    &--1 {
+      pointer-events: none;
+      top: 0;
+      // width: 1054px;
+      // height: 1054px;
+      @include adaptiveValue("width", 1054px, 430px, 0, 1054px, 430px);
+      @include adaptiveValue("height", 1054px, 430px, 0, 1054px, 430px);
+      z-index: 4;
+
+      &::after {
+        content: "";
+        position: absolute;
+        height: 53%;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        // background-color: rgba(255, 0, 0, 0.5);
+        // background-color: var(--greyscale-black-100);
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0) 0%,
+          var(--greyscale-black-100) 16%,
+          var(--greyscale-black-100) 100%
+        );
+        // background-color: rgba(0, 0, 0, 0.5);
+      }
+    }
+
+    &--2 {
+      // top: 70px;
+      // width: 917px;
+      // height: 917px;
+      @include adaptiveValue("top", 70px, 35px, 0, 1054px, 430px);
+      @include adaptiveValue("width", 917px, 373px, 0, 1054px, 430px);
+      @include adaptiveValue("height", 917px, 373px, 0, 1054px, 430px);
+
+      &::before {
+        background: var(--main-colors-linear) border-box;
+      }
+    }
+
+    &--3 {
+      // top: 147px;
+      // top: 72px;
+      // width: 760px;
+      // height: 760px;
+      @include adaptiveValue("top", 147px, 72px, 0, 1054px, 430px);
+      @include adaptiveValue("width", 760px, 310px, 0, 1054px, 430px);
+      @include adaptiveValue("height", 760px, 310px, 0, 1054px, 430px);
+    }
+
+    &--4 {
+      // top: 216px;
+      // top: 100px;
+      // width: 623px;
+      // height: 623px;
+      @include adaptiveValue("top", 216px, 110px, 0, 1054px, 430px);
+      @include adaptiveValue("width", 623px, 254px, 0, 1054px, 430px);
+      @include adaptiveValue("height", 623px, 254px, 0, 1054px, 430px);
+    }
+  }
+
+  &__wrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    pointer-events: none;
+    animation: partners 60s linear infinite;
+  }
+
+  &__item {
+    position: absolute;
+    transform-origin: center;
+    animation: counterspin1 60s linear infinite;
+
+    &--1 {
+      // left: -54px;
+      // top: calc(50% - 54px);
+      // top: 413px;
+      @include adaptiveValue("top", 413px, 161px, 0, 1054px, 430px);
+      @include adaptiveValue("left", -54px, -21px, 0, 1054px, 430px);
+    }
+
+    &--2 {
+      //   left: 16px;
+      //   top: 175px;
+      //       left: 5px;
+      // top: 69px;
+      @include adaptiveValue("left", 16px, 5px, 0, 1054px, 430px);
+      @include adaptiveValue("top", 175px, 69px, 0, 1054px, 430px);
+    }
+
+    &--3 {
+      //   left: 165px;
+      //   top: 17px;
+      //   left: 68px;
+      // top: 6px;
+      @include adaptiveValue("left", 165px, 68px, 0, 1054px, 430px);
+      @include adaptiveValue("top", 17px, 6px, 0, 1054px, 430px);
+    }
+
+    &--4 {
+      // left: calc(50% - 54px);
+      // top: -54px;
+      // left: 405px;
+      // top: -54px;
+      @include adaptiveValue("left", 405px, 162px, 0, 1054px, 430px);
+      @include adaptiveValue("top", -54px, -22px, 0, 1054px, 430px);
+      //       left: 162px;
+      // top: -22px;
+    }
+
+    &--5 {
+      //   right: 166px;
+      //   top: 20px;
+      //       right: 67px;
+      // top: 10px;
+      @include adaptiveValue("right", 166px, 67px, 0, 1054px, 430px);
+      @include adaptiveValue("top", 20px, 10px, 0, 1054px, 430px);
+    }
+
+    &--6 {
+      //   right: 15px;
+      //   top: 176px;
+      //       right: 5px;
+      // top: 75px;
+      @include adaptiveValue("right", 15px, 5px, 0, 1054px, 430px);
+      @include adaptiveValue("top", 176px, 75px, 0, 1054px, 430px);
+    }
+
+    &--7 {
+      // right: -54px;
+      // top: calc(50% - 54px);
+      @include adaptiveValue("right", -54px, -21px, 0, 1054px, 430px);
+      @include adaptiveValue("top", 413px, 161px, 0, 1054px, 430px);
+    }
+
+    &--8 {
+      //   right: 15px;
+      //   bottom: 176px;
+      //       right: 1px;
+      // bottom: 79px;
+      @include adaptiveValue("right", 15px, 1px, 0, 1054px, 430px);
+      @include adaptiveValue("bottom", 176px, 79px, 0, 1054px, 430px);
+    }
+
+    &--9 {
+      //   right: 166px;
+      //   bottom: 20px;
+      //       right: 65px;
+      // bottom: 12px;
+      @include adaptiveValue("right", 166px, 65px, 0, 1054px, 430px);
+      @include adaptiveValue("bottom", 20px, 12px, 0, 1054px, 430px);
+    }
+
+    &--10 {
+      //   left: 407px;
+      //   bottom: -54px;
+      //       left: 162px;
+      // bottom: -16px;
+      @include adaptiveValue("left", 407px, 162px, 0, 1054px, 430px);
+      @include adaptiveValue("bottom", -54px, -16px, 0, 1054px, 430px);
+    }
+
+    &--11 {
+      //   left: 165px;
+      //   bottom: 17px;
+      //       left: 64px;
+      // bottom: 12px;
+      @include adaptiveValue("left", 165px, 64px, 0, 1054px, 430px);
+      @include adaptiveValue("bottom", 17px, 12px, 0, 1054px, 430px);
+    }
+
+    &--12 {
+      //   left: 16px;
+      //   bottom: 175px;
+      //       left: -1px;
+      // bottom: 82px;
+      @include adaptiveValue("left", 16px, -1px, 0, 1054px, 430px);
+      @include adaptiveValue("bottom", 175px, 82px, 0, 1054px, 430px);
+    }
+  }
+
+  &__logo {
+    pointer-events: all;
+    background-color: rgba(37, 37, 50, 0.8);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // width: 102px;
+    // height: 102px;
+    @include adaptiveValue("width", 102px, 42px, 0, 1054px, 430px);
+    @include adaptiveValue("height", 102px, 42px, 0, 1054px, 430px);
+    border-radius: 50%;
+    border: 1px solid transparent;
+    cursor: pointer;
+    color: var(--greyscale-white);
+    transition: scale 0.3s;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      width: inherit;
+      height: inherit;
+      mask:
+        linear-gradient(#fff, #fff) padding-box,
+        linear-gradient(#fff, #fff);
+      mask-composite: exclude;
+      border: inherit;
+      border-radius: inherit;
+      background: var(--main-colors-linear-border) border-box;
+      transition: opacity 0.3s;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus-visible {
+      scale: 1.3;
+    }
+
+    @include hover {
+      scale: 1.3;
+    }
+  }
+
+  &__logo-img {
+    // width: 79px;
+    // height: 20px;
+    @include adaptiveValue("width", 79px, 32px, 0, 1054px, 430px);
+    @include adaptiveValue("height", 20px, 8px, 0, 1054px, 430px);
+    object-fit: contain;
+  }
+}
+
+/* Spin animations */
+
+@keyframes partners {
+  0% {
+    transform: rotate(1deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes counterspin1 {
+  0% {
+    transform: rotate(-1deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}

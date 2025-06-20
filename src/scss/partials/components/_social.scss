@@ -15,41 +15,32 @@
     background-image: var(--main-colors-linear);
 
     &--twitter {
-      .social__link {
-        svg {
-          width: 19px;
-          height: 15px;
-        }
+      .social__img {
+        width: 19px;
+        height: 15px;
       }
     }
 
     &--facebook {
-      .social__link {
-        svg {
-          width: 10px;
-          height: 20px;
-        }
+      .social__img {
+        width: 10px;
+        height: 20px;
       }
     }
 
     &--instagram {
-      .social__link {
-        svg {
-          width: 22px;
-          height: 22px;
-        }
+      .social__img {
+        width: 22px;
+        height: 22px;
       }
     }
 
     &--github {
-      .social__link {
-        svg {
-          width: 21px;
-          height: 20px;
-        }
+      .social__img {
+        width: 21px;
+        height: 20px;
       }
     }
-
   }
 
   &__link {
@@ -64,22 +55,15 @@
     background-color: var(--greyscale-black-100);
     transition: background-color 0.3s;
 
-    svg {
-      fill: currentColor;
-      transition: fill 0.3s;
-    }
-
     @include focus-visible;
 
     @include hover {
       background-color: var(--main-colors-purple);
     }
-
-    &:active {
-      svg {
-        fill: var(--greyscale-black-80);
-      }
-    }
   }
 
+  &__img {
+    width: 20px;
+    height: 20px;
+  }
 }
