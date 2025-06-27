@@ -4,6 +4,24 @@
 @include('partials/repeat-sections/head.html')
 
 <body class="page__body">
+  <noscript>
+    <style>
+      /**
+    * Reinstate scrolling for non-JS clients
+    */
+      .simplebar-content-wrapper {
+        scrollbar-width: auto;
+        -ms-overflow-style: auto;
+      }
+
+      .simplebar-content-wrapper::-webkit-scrollbar,
+      .simplebar-hide-scrollbar::-webkit-scrollbar {
+        display: initial;
+        width: initial;
+        height: initial;
+      }
+    </style>
+  </noscript>
   <div class="site-container">
     @include('partials/repeat-sections/header.html')
     <main class="main">
@@ -15,6 +33,7 @@
       @include('partials/repeat-sections/testimonial-section.html')
       @include('partials/repeat-sections/pricing-section.html')
       @include('partials/repeat-sections/partners-section.html')
+      @include('partials/homepage/articles-section.html')
     </main>
     @include('partials/repeat-sections/footer.html')
     @include('partials/components/modals.html')

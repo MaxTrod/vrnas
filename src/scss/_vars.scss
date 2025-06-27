@@ -16,6 +16,7 @@
   --main-colors-linear-transparent: linear-gradient(90deg, transparent 0%, transparent 100%);
   --main-colors-linear-border: linear-gradient(90deg, rgba(255, 255, 255, 0.3) 0%, transparent 100%);
   --main-colors-linear-blur: linear-gradient(180deg, rgba(37, 37, 50, 0) 0%, rgba(37, 37, 50, 0.91) 53.06%, #252532 100%);
+  --main-colors-linear-blur-2: linear-gradient(180deg,rgba(50, 70, 188, 0) 0%, #2C40BA 100%);
   --main-colors-purple: #ca6aeb;
   --main-colors-blue: #19b5f1;
   --greyscale-black-100: #18181b;
@@ -41,9 +42,9 @@
   --Heading-6: 600 28px / 36px var(--font-family);
   --Heading-7: 400 20px / 26px var(--font-family);
   --Heading-8: 500 20px / 26px var(--font-family);
-  --Heading-9: 400 18px / 18px var(--font-family);
+  --Heading-9: 400 18px / 23px var(--font-family);
   --Heading-10: 600 16px / 28px var(--font-family);
-  --Heading-11: 600 16px / 16px var(--font-family);
+  --Heading-11: 600 16px / 21px var(--font-family);
   --Heading-12: 400 14px / 14px var(--font-family);
   --Body-1: 300 16px / 28px var(--font-family);
   --Body-2: 400 14px / 28px var(--font-family);

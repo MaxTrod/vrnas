@@ -7,3 +7,5 @@ import './components/header-scroll.js';
 import './components/animation.js';
 import './components/accordeon.js';
 import './components/orbit.js';
+import './components/sliders.js';
+import './components/custom-scroll-bar.js';

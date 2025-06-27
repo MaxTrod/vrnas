@@ -121,8 +121,6 @@
   border-radius: 50%;
   transform: translate(-50%, -50%);
 
-  // border: 2px solid rgba(255, 255, 255, 0.17);
-
   &--1 {
     @include adaptiveValue("width", 1247px, 735.98px, 2, 1279px, 767.98px);
     @include adaptiveValue("height", 1247px, 735.98px, 2, 1279px, 767.98px);
@@ -132,18 +130,8 @@
       height: 1007px;
     }
 
-    .orbit-test__wrap {
-      @media (hover: hover) and (width >= 767.98px) {
-        // animation: spin-1 60s linear infinite;
-      }
-    }
-
     .orbit-test__tooltip {
       &:nth-child(1) {
-        @media (hover: hover) and (width >= 767.98px) {
-          // animation: counter-spin-1-1 60s linear infinite;
-        }
-
         @include adaptiveValue("top", 286px, 168px, 2, 1279px, 767.98px);
         @include adaptiveValue("left", -303px, -339px, 2, 1279px, 767.98px);
 
@@ -154,10 +142,6 @@
       }
 
       &:nth-child(2) {
-        @media (hover: hover) and (width >= 767.98px) {
-          // animation: counter-spin-1-2 60s linear infinite;
-        }
-
         @include adaptiveValue("right", -62px, -154px, 2, 1279px, 767.98px);
         @include adaptiveValue("bottom", 20px, -33px, 2, 1279px, 767.98px);
 
@@ -197,19 +181,13 @@
       height: 875px;
     }
 
-    .orbit-test__wrap {
-      @media (hover: hover) and (width >= 767.98px) {
-        // animation: spin-2 60s linear infinite;
-      }
-    }
-
     .orbit-test__tooltip {
       @include adaptiveValue("bottom", 196px, 94px, 2, 1279px, 767.98px);
       @include adaptiveValue("left", -282px, -325px, 2, 1279px, 767.98px);
 
       @include small-tablet {
         left: 220px;
-        bottom: -39px;
+        bottom: 54px;
 
         .tooltip-review {
           left: 0;
@@ -230,10 +208,6 @@
           }
         }
       }
-
-      @media (hover: hover) and (width >= 767.98px) {
-        // animation: counter-spin-2-1 60s linear infinite;
-      }
     }
   }
 
@@ -246,19 +220,9 @@
       height: 726px;
     }
 
-    .orbit-test__wrap {
-      @media (hover: hover) and (width >= 767.98px) {
-        // animation: spin-3 60s linear infinite;
-      }
-    }
-
     .orbit-test__tooltip {
       @include adaptiveValue("top", 351px, 196px, 2, 1279px, 767.98px);
       @include adaptiveValue("right", -368px, -373px, 2, 1279px, 767.98px);
-
-      @media (hover: hover) and (width >= 767.98px) {
-        // animation: counter-spin-3-1 60s linear infinite;
-      }
 
       @include small-tablet {
         right: -175px;
@@ -274,12 +238,6 @@
     @include small-tablet {
       width: 595px;
       height: 595px;
-    }
-
-    .orbit-test__wrap {
-      @media (hover: hover) and (width >= 767.98px) {
-        // animation: spin-4 60s linear infinite;
-      }
     }
 
     .orbit-test__tooltip {
@@ -309,10 +267,6 @@
           }
         }
       }
-
-      @media (hover: hover) and (width >= 767.98px) {
-        // animation: counter-spin-4-1 60s linear infinite;
-      }
     }
   }
 
@@ -325,17 +279,7 @@
       height: 456px;
     }
 
-    .orbit-test__wrap {
-      @media (hover: hover) and (width >= 767.98px) {
-        // animation: spin-5 60s linear infinite;
-      }
-    }
-
     .orbit-test__tooltip {
-      @media (hover: hover) and (width >= 767.98px) {
-        // animation: counter-spin-5-1 60s linear infinite;
-      }
-
       @include adaptiveValue("bottom", -60px, -57px, 2, 1279px, 767.98px);
       @include adaptiveValue("left", -69px, -198px, 2, 1279px, 767.98px);
 
@@ -353,12 +297,6 @@
     @include small-tablet {
       width: 314px;
       height: 314px;
-    }
-
-    .orbit-test__wrap {
-      @media (hover: hover) and (width >= 767.98px) {
-        // animation: spin1 5s linear infinite;
-      }
     }
   }
 
@@ -401,321 +339,6 @@
   }
 }
 
-.tooltip-review {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 16px;
 
-  &.paused {
-    .tooltip-review__btn {
-      &::before {
-        opacity: 0;
-      }
 
-      &::after {
-        opacity: 1;
-      }
-    }
 
-    .tooltip-review__icon-block {
-      &::before {
-        opacity: 1;
-      }
-    }
-
-    // .tooltip-review__btn-decor {
-    //   &::before {
-    //     opacity: 1;
-    //   }
-    // }
-
-    .tooltip-review__body {
-      opacity: 1;
-      visibility: visible;
-    }
-  }
-
-  &--reverse {
-    flex-direction: row-reverse;
-
-    .tooltip-review__body {
-      clip-path: polygon(0% 0%, 95% 0, 100% 50%, 95% 99%, 0% 100%);
-
-      &::before,
-      &::after {
-        clip-path: polygon(0% 0%, 95% 0, 100% 50%, 95% 99%, 0% 100%);
-      }
-
-      &::before {
-        transform: scaleX(-1);
-      }
-    }
-  }
-
-  &__btn {
-    position: relative;
-    z-index: 11;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid transparent;
-    border-radius: 100%;
-    width: 75px;
-    height: 75px;
-    background-color: rgba(37, 37, 50, 0.6);
-
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      width: inherit;
-      height: inherit;
-      mask:
-        linear-gradient(#fff, #fff) padding-box,
-        linear-gradient(#fff, #fff);
-      mask-composite: exclude;
-      border: inherit;
-      border-radius: inherit;
-      transition: opacity 0.3s;
-    }
-
-    &::before {
-      background: var(--main-colors-linear-border) border-box;
-      opacity: 1;
-    }
-
-    &::after {
-      background: var(--main-colors-linear) border-box;
-      opacity: 0;
-    }
-  }
-
-  &__icon-block {
-    position: relative;
-    display: block;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    z-index: 7;
-    color: var(--greyscale-white);
-
-    &::before {
-      content: "";
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      width: 210%;
-      height: 180%;
-      background: url("../img/light.png") 0 0 / 100% 100% no-repeat;
-      opacity: 0;
-      transform: translate(-50%, -50%);
-      transition: opacity 0.3s;
-    }
-  }
-
-  &__icon {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-  }
-
-  &__body {
-    position: relative;
-    z-index: 10;
-    clip-path: polygon(5% 0, 100% 0%, 100% 100%, 5% 100%, 0% 50%);
-    width: 297px;
-    opacity: 0;
-    visibility: hidden;
-    transition:
-      opacity 0.3s,
-      visibility 0.3s;
-
-    &::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      z-index: 8;
-      clip-path: polygon(5% 0, 100% 0%, 100% 100%, 5% 100%, 0% 50%);
-      width: 100%;
-      height: 100%;
-      background-image: var(--main-colors-linear-border);
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      z-index: 9;
-      clip-path: polygon(5% 0, 100% 0%, 100% 100%, 5% 100%, 0% 50%);
-      width: calc(100% - 4px);
-      height: calc(100% - 4px);
-      background-color: rgba(37, 37, 50, 1);
-      transform: translate(-50%, -50%);
-    }
-  }
-
-  &__content {
-    position: relative;
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin: 0;
-    padding: 18px 19px 13px 23px;
-    row-gap: 8px;
-  }
-
-  &__review {
-    margin: 0;
-
-    p {
-      margin: 0;
-      font: var(--Body-4);
-
-      &:not(:last-child) {
-        margin-bottom: 15px;
-      }
-    }
-  }
-
-  &__author {
-    position: relative;
-    font-size: 12px;
-    line-height: 200%;
-
-    &::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 1px;
-      background-image: var(--main-colors-linear);
-    }
-
-    span {
-      color: var(--greyscale-grey-2);
-    }
-
-    cite {
-      font-style: normal;
-    }
-  }
-}
-
-.circle-2 {
-  @include adaptiveValue("width", 1084px, 572.98px, 2, 1279px, 767.98px);
-  @include adaptiveValue("height", 1084px, 572.98px, 2, 1279px, 767.98px);
-
-  @include small-tablet {
-    width: 875px;
-    height: 875px;
-  }
-}
-
-/* Spin animations */
-
-// @keyframes spin-1 {
-//   0% {
-//     transform: rotate(1deg);
-//   }
-//   100% {
-//     transform: rotate(360deg);
-//   }
-// }
-
-// @keyframes counter-spin-1-1 {
-//   0% {
-//     transform: rotate(-1deg);
-//   }
-//   100% {
-//     transform: rotate(-360deg);
-//   }
-// }
-
-// @keyframes counter-spin-1-2 {
-//   0% {
-//     transform: rotate(-1deg);
-//   }
-//   100% {
-//     transform: rotate(-360deg);
-//   }
-// }
-
-// @keyframes spin-2 {
-//   0% {
-//     transform: rotate(0deg);
-//   }
-//   100% {
-//     transform: rotate(360deg);
-//   }
-// }
-
-// @keyframes counter-spin-2-1 {
-//   0% {
-//     transform: rotate(0deg);
-//   }
-//   100% {
-//     transform: rotate(-360deg);
-//   }
-// }
-
-// @keyframes spin-3 {
-//   0% {
-//     transform: rotate(0deg);
-//   }
-//   100% {
-//     transform: rotate(360deg);
-//   }
-// }
-
-// @keyframes counter-spin-3-1 {
-//   0% {
-//     transform: rotate(0deg);
-//   }
-//   100% {
-//     transform: rotate(-360deg);
-//   }
-// }
-
-// @keyframes spin-4 {
-//   0% {
-//     transform: rotate(0deg);
-//   }
-//   100% {
-//     transform: rotate(360deg);
-//   }
-// }
-
-// @keyframes counter-spin-4-1 {
-//   0% {
-//     transform: rotate(0deg);
-//   }
-//   100% {
-//     transform: rotate(-360deg);
-//   }
-// }
-
-// @keyframes spin-5 {
-//   0% {
-//     transform: rotate(0deg);
-//   }
-//   100% {
-//     transform: rotate(360deg);
-//   }
-// }
-
-// @keyframes counter-spin-5-1 {
-//   0% {
-//     transform: rotate(0deg);
-//   }
-//   100% {
-//     transform: rotate(-360deg);
-//   }
-// }

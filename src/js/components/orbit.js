@@ -1,48 +1,9 @@
 let isMobile = { Android: function () { return navigator.userAgent.match(/Android/i); }, BlackBerry: function () { return navigator.userAgent.match(/BlackBerry/i); }, iOS: function () { return navigator.userAgent.match(/iPhone|iPad|iPod/i); }, Opera: function () { return navigator.userAgent.match(/Opera Mini/i); }, Windows: function () { return navigator.userAgent.match(/IEMobile/i); }, any: function () { return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows()); } };
 
-// Открытие тултипа по наведению и фокусу а также клик на мобилках
-function buttons() {
-  const tooltipButtons = document.querySelectorAll('.tooltip-review__btn');
-  const allTooltips = document.querySelectorAll('.orbit-test__tooltip');
-  const allReviewTooltips = document.querySelectorAll('.tooltip-review');
+import { tooltipActions, closeTooltip } from './tooltip.js'; // Функция fn1 теперь доступна
 
-  tooltipButtons.forEach(tooltiptn => {
-    const tooltipReview = tooltiptn.closest('.tooltip-review');
-    if (!isMobile.any() && window.innerWidth >= 767.98) {
-      tooltiptn.addEventListener("mouseover", function (e) {
-        tooltipReview.classList.add('paused');
-      })
-      tooltiptn.addEventListener("mouseout", function (e) {
-        tooltipReview.classList.remove('paused');
-      })
-      tooltiptn.addEventListener("focusin", function (e) {
-        tooltipReview.classList.add('paused');
-      })
-      tooltiptn.addEventListener("focusout", function (e) {
-        tooltipReview.classList.remove('paused');
-      })
-    } else {
-      tooltiptn.addEventListener("click", function (e) {
-        allReviewTooltips.forEach(tp => {
-          tp.classList.remove('paused');
-        })
-        tooltipReview.classList.add('paused');
-      })
-    }
-  })
-}
-buttons();
+tooltipActions();
 
-function closeTooltip() {
-  const allTooltips = document.querySelectorAll('.tooltip-review');
-  document.addEventListener("click", function (e) {
-    if (!e.target.closest('.tooltip-review')) {
-      allTooltips.forEach(tp => {
-        tp.classList.remove('paused');
-      })
-    }
-  })
-}
 closeTooltip();
 
 // анимация кругов а также расположение открытого тултипа в зависимости от угла окружности (говнокод, но по-другому не смог)
@@ -274,38 +235,42 @@ animateOrbit();
 
 
 // Круги на секции партнеров
-const partnersInner = document.querySelector('.partners-solar__inner');
-const partners = document.querySelectorAll('.partners-solar__logo');
-const partnersItems = document.querySelectorAll('.partners-solar__item');
-const partnersWrap = document.querySelectorAll('.partners-solar__wrap');
-partners.forEach(partner => {
-  partner.addEventListener("mouseover", function (e) {
-    partnersItems.forEach(partnerItem => {
-      partnerItem.style.animationPlayState = "paused";
-    })
-    partnersWrap.forEach(partnerWrap => {
-      partnerWrap.style.animationPlayState = "paused";
-    })
-  });
+function partnerOrbit() {
+  const partnersInner = document.querySelector('.partners-solar__inner');
+  const partners = document.querySelectorAll('.partners-solar__logo');
+  const partnersItems = document.querySelectorAll('.partners-solar__item');
+  const partnersWrap = document.querySelectorAll('.partners-solar__wrap');
+  partners.forEach(partner => {
+    partner.addEventListener("mouseover", function (e) {
+      partnersItems.forEach(partnerItem => {
+        partnerItem.style.animationPlayState = "paused";
+      })
+      partnersWrap.forEach(partnerWrap => {
+        partnerWrap.style.animationPlayState = "paused";
+      })
+    });
 
-  partner.addEventListener("mouseout", function (e) {
-    partnersItems.forEach(partnerItem => {
-      partnerItem.style.animationPlayState = "running";
+    partner.addEventListener("mouseout", function (e) {
+      partnersItems.forEach(partnerItem => {
+        partnerItem.style.animationPlayState = "running";
+      })
+      partnersWrap.forEach(partnerWrap => {
+        partnerWrap.style.animationPlayState = "running";
+      })
     })
-    partnersWrap.forEach(partnerWrap => {
-      partnerWrap.style.animationPlayState = "running";
-    })
+
+    if (partnersItems.length > 7) {
+      partner.addEventListener("focusin", function (e) {
+        partnersInner.classList.add('full');
+      })
+      partner.addEventListener("focusout", function (e) {
+        partnersInner.classList.remove('full');
+      })
+    }
   })
+}
+partnerOrbit();
 
-  if (partnersItems.length > 7) {
-    partner.addEventListener("focusin", function (e) {
-      partnersInner.classList.add('full');
-    })
-    partner.addEventListener("focusout", function (e) {
-      partnersInner.classList.remove('full');
-    })
-  }
-})
 
 
 
