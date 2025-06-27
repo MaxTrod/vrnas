@@ -6,6 +6,7 @@ if (document.querySelector('.articles-slider__swiper')) {
   const articlesSwiper = new Swiper('.articles-slider__swiper', {
     modules: [Navigation, Pagination, A11y],
     slidesPerView: 1,
+    grabCursor: true,
     loop: true,
     pagination: {
       el: '.articles-slider__pagination',
