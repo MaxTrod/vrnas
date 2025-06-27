@@ -11,6 +11,10 @@
     height: 498px;
     background: url("../img/wave-decor-2.png") 0 0 / cover no-repeat;
     pointer-events: none;
+
+    @include small-tablet {
+      height: 320px;
+    }
   }
 }
 
@@ -19,17 +23,55 @@
   grid-template-columns: 422px 1fr;
   padding-bottom: 33px;
 
+  @include tablet {
+    grid-template-columns: 300px 1fr;
+  }
+
+  @include small-tablet {
+    display: flex;
+    flex-direction: column;
+    row-gap: 56px;
+  }
+
   &__left {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding-bottom: 35px;
+
+    @include small-tablet {
+      flex-direction: row;
+      align-items: center;
+      padding-bottom: 0;
+      gap: 30px;
+    }
+  }
+
+  &__left-logo {
+    @include small-tablet {
+      flex: 0 0 101px;
+      width: 101px;
+    }
   }
 
   &__right {
     display: grid;
     column-gap: 20px;
     grid-template-columns: 1fr 1fr 1.55fr;
+
+    @include small-tablet {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 64px 100px;
+    }
+  }
+
+  &__right-column {
+    @include small-tablet {
+      &:last-child {
+        flex: 1 1 100%;
+      }
+    }
   }
 
   &__right-title {

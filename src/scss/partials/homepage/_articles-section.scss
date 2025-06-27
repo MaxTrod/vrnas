@@ -17,6 +17,7 @@
     height: 719px;
     background: url("../img/cell.png") 0 0 / 100% 100% no-repeat;
     pointer-events: none;
+    translate: 0 70px;
   }
 
   @include small-tablet {

@@ -1,4 +1,4 @@
-.subscribe-form {
+.subscribe {
   padding-bottom: 67px;
 
   &__inner {
@@ -36,15 +36,15 @@
       font: var(--Heading-6);
     }
   }
+}
 
-  &__body {
-    display: flex;
-    align-items: center;
-    border-radius: 2px;
-    padding: 3px 3px 3px 0;
-    height: 56px;
-    background-color: rgba(255, 255, 255, 0.07);
-  }
+.sub-form {
+  display: flex;
+  align-items: center;
+  border-radius: 2px;
+  padding: 3px 3px 3px 0;
+  height: 56px;
+  background-color: rgba(255, 255, 255, 0.07);
 
   &__input {
     flex: 0 0 312px;
