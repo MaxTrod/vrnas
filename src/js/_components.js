@@ -9,3 +9,4 @@ import './components/accordeon.js';
 import './components/orbit.js';
 import './components/sliders.js';
 import './components/custom-scroll-bar.js';
+import './components/common.js';

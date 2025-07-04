@@ -1,11 +1,5 @@
 .articles-section {
   position: relative;
-  padding-top: 75px;
-  padding-bottom: 150px;
-
-  @include small-tablet {
-    padding-bottom: 100px;
-  }
 
   &::before {
     content: "";
@@ -29,6 +23,10 @@
     align-items: flex-end;
     justify-content: space-between;
     gap: 30px;
+
+    .header-block__btn {
+      background-color: rgba(255, 255, 255, 0.06);
+    }
 
     &:not(:last-child) {
       margin-bottom: 72px;
@@ -222,11 +220,14 @@
     border-radius: 32px;
     width: 9px;
     height: 3px;
+    color: var(--greyscale-white);
     background: rgba(255, 255, 255, 0.31);
     opacity: 1;
     transition:
       background-color 0.3s,
       width 0.3s;
+
+    @include focus-visible;
   }
 
   .swiper-pagination-bullet.swiper-pagination-bullet-active {

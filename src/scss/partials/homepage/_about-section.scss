@@ -1,7 +1,4 @@
 .about-section {
-  padding-top: 60px;
-  padding-bottom: 75px;
-
   // .header-block__label {
   //   opacity: 0;
   //   transform: translateY(25px);
@@ -39,11 +36,6 @@
   //     transform: translateY(0);
   //   }
   // }
-
-  @include small-tablet {
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
 
   &__container {
     align-items: end;

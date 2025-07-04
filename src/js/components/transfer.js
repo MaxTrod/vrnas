@@ -21,14 +21,17 @@ new TransferElements(
   // }
 );
 
-new TransferElements(
-  {
-    sourceElement: document.querySelector('.content-hero__video'),
-    breakpoints: {
-      767.98: {
-        targetElement: document.querySelector('.hero__images'),
-        targetPosition: 1
+if (document.querySelector('.hero')) {
+  new TransferElements(
+    {
+      sourceElement: document.querySelector('.content-hero__video'),
+      breakpoints: {
+        767.98: {
+          targetElement: document.querySelector('.hero__images'),
+          targetPosition: 1
+        }
       }
     }
-  }
-);
+  );
+}
+

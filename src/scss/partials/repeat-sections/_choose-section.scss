@@ -1,17 +1,29 @@
 .choose-section {
-  padding-top: 75px;
-  padding-bottom: 75px;
-
-  @include small-tablet {
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-
   &__container {
     align-items: center;
 
     @include small-tablet {
       row-gap: 48px;
+    }
+
+    &--reverse {
+      .choose-section__content {
+        order: 2;
+        padding-top: 30px;
+      }
+
+      .choose-section__images {
+        order: 1;
+        transform: translateX(0);
+
+        @include adaptiveValue("margin-left", 32px, 1px, 2, 1200px, 767.98px);
+      }
+
+      .choose-section__img-block::before {
+        right: 29%;
+        width: 68%;
+        height: 86%;
+      }
     }
   }
 
@@ -38,7 +50,7 @@
     position: relative;
     grid-column: 6 span;
     padding-bottom: 36px;
-    transform:  translateX(adaptive_px(0, 1232, 110));
+    transform: translateX(adaptive_px(0, 1232, 110));
 
     @include small-tablet {
       display: flex;
@@ -61,7 +73,7 @@
 
     &::before,
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       z-index: 1;
       pointer-events: none;
@@ -80,7 +92,7 @@
       top: -10%;
       width: 130%;
       height: 130%;
-      background: url('../img/light.png') 0 0 / 100% 100% no-repeat;
+      background: url("../img/light.png") 0 0 / 100% 100% no-repeat;
       opacity: 0.5;
       transform: rotate(40deg);
       pointer-events: none;
@@ -106,7 +118,6 @@
         height: 95px;
       }
     }
-
   }
 
   .thumb-video__btn-img {

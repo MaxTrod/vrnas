@@ -1,6 +1,10 @@
 .footer {
   position: relative;
-  padding-top: 115px;
+  padding-top: 75px;
+
+  @include small-tablet {
+    padding-top: 50px;
+  }
 
   &::before {
     content: "";

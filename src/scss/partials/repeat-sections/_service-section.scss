@@ -1,16 +1,28 @@
 .service-section {
-  padding-top: 75px;
-  padding-bottom: 75px;
-
   --top1: 57px;
   --top2: 78px;
 
-  @include small-tablet {
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-
   &__header {
+    position: relative;
+    z-index: 2;
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: -20%;
+      top: -200%;
+      z-index: 1;
+      width: 60%;
+      height: 500%;
+      background: url("../img/light.png") 0 0 / 100% 100% no-repeat;
+      opacity: 0.7;
+      pointer-events: none;
+
+      @include small-tablet {
+        display: none;
+      }
+    }
+
     padding-right: 42px;
 
     &:not(:last-child) {
@@ -78,6 +90,16 @@
   padding: 38px 32px 0;
   background-color: var(--greyscale-black-80);
   transition: all 0.3s;
+
+  &.visible {
+    &::before {
+      opacity: 0;
+    }
+
+    &::after {
+      opacity: 1;
+    }
+  }
 
   &::before,
   &::after {
@@ -154,6 +176,10 @@
       opacity: 0;
       transition: opacity 0.3s;
       pointer-events: none;
+
+      .visible & {
+        opacity: 1;
+      }
     }
 
     @include small-tablet {
@@ -187,11 +213,9 @@
     z-index: 3;
     background-color: rgba(255, 255, 255, 0.06);
     opacity: 0;
-    visibility: hidden;
     transform: translateX(-50%);
     transition:
-      opacity 0.3s,
-      visibility 0.3s;
+      opacity 0.3s;
 
     span {
       font: var(--Button-1);
@@ -206,8 +230,15 @@
       left: 0;
       bottom: 0;
       opacity: 1;
-      visibility: visible;
       transform: translateX(0);
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus-visible {
+      opacity: 1;
     }
   }
 
@@ -232,7 +263,6 @@
 
     .item-service__btn {
       opacity: 1;
-      visibility: visible;
     }
   }
 }

@@ -1,12 +1,4 @@
 .pricing-section {
-  padding-top: 75px;
-  padding-bottom: 75px;
-
-  @include small-tablet {
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-
   &__header {
     .header-block__title {
       margin-bottom: 15px;

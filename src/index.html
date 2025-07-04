@@ -4,37 +4,25 @@
 @include('partials/repeat-sections/head.html')
 
 <body class="page__body">
-  <noscript>
-    <style>
-      /**
-    * Reinstate scrolling for non-JS clients
-    */
-      .simplebar-content-wrapper {
-        scrollbar-width: auto;
-        -ms-overflow-style: auto;
-      }
-
-      .simplebar-content-wrapper::-webkit-scrollbar,
-      .simplebar-hide-scrollbar::-webkit-scrollbar {
-        display: initial;
-        width: initial;
-        height: initial;
-      }
-    </style>
-  </noscript>
   <div class="site-container">
     @include('partials/repeat-sections/header.html')
     <main class="main">
       @include('partials/homepage/hero.html')
       @include('partials/homepage/about-section.html')
       @include('partials/repeat-sections/service-section.html')
-      @include('partials/homepage/choose-section.html')
+      <!-- @include('partials/homepage/choose-section.html') -->
+       @include('partials/repeat-sections/choose-section.html', {
+        "class" : "",
+        "srcImg" : "img/man-karate.png",
+        "width": "563",
+        "height": "662"
+       })
       @include('partials/homepage/start-section.html')
       @include('partials/repeat-sections/testimonial-section.html')
       @include('partials/repeat-sections/pricing-section.html')
       @include('partials/repeat-sections/partners-section.html')
       @include('partials/homepage/articles-section.html')
-      @include('partials/components/subscribe-form.html')
+      @include('partials/repeat-sections/subscribe-section.html')
     </main>
     @include('partials/repeat-sections/footer.html')
     @include('partials/components/modals.html')

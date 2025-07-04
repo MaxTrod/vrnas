@@ -1,0 +1,55 @@
+.team-about {
+  &__header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+
+    @include small-tablet {
+      justify-content: center;
+      text-align: center;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+
+    .header-block__btn {
+      background-color: rgba(255, 255, 255, 0.06);
+
+      @include small-tablet {
+        display: none;
+      }
+    }
+  }
+
+  &__list {
+    row-gap: 32px;
+  }
+
+  &__item {
+    grid-column: span 3;
+
+    @include desktop {
+      grid-column: span 6;
+    }
+
+    @include small-tablet {
+      grid-column: span 12;
+    }
+
+    @include mobile {
+      justify-self: center;
+      width: 293px;
+    }
+  }
+
+  &__btn {
+    display: none;
+
+    @include small-tablet {
+      display: inline-block;
+      margin-top: 32px;
+    }
+  }
+}

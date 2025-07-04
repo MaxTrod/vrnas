@@ -1,0 +1,48 @@
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  &__item {
+    position: relative;
+
+    &:not(:last-child) {
+      padding-right: 15px;
+
+      &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        width: 6px;
+        height: 9px;
+        background: url('../img/svg-no-sprite/menu-arrow.svg') 0 0 / 100% 100% no-repeat;
+        rotate: -90deg;
+        translate: 0 -50%;
+      }
+    }
+
+    &:last-child {
+      .breadcrumbs__link {
+        font: var(--Body-1);
+        color: var(--greyscale-grey-2);
+      }
+    }
+  }
+
+  &__link {
+    font: var(--Heading-11);
+    color: var(--greyscale-white);
+    transition: color 0.3s;
+
+    @include focus-visible;
+
+    @include hover {
+      color: var(--main-colors-purple);
+    }
+
+    &:active {
+      color: var(--greyscale-black-100);
+    }
+  }
+}

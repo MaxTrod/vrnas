@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" class="page">
+
+@include('partials/repeat-sections/head.html')
+
+<body class="page__body">
+  <div class="site-container">
+    @include('partials/repeat-sections/header.html')
+    <main class="main">
+      @include('partials/about-page/hero-about.html')
+      @include('partials/about-page/about-us-section.html')
+      @include('partials/about-page/choose-us-section.html')
+      @include('partials/repeat-sections/choose-section.html', {
+      "class": "choose-section__container--reverse",
+      "srcImg" : "img/man-vr-right.png",
+      "width": "500",
+      "height": "574"
+      })
+      @include('partials/about-page/team-about.html')
+      @include('partials/repeat-sections/partners-section.html')
+      @include('partials/repeat-sections/faq-section.html')
+      @include('partials/repeat-sections/subscribe-section.html')
+    </main>
+    @include('partials/repeat-sections/footer.html')
+    @include('partials/components/modals.html')
+  </div>
+</body>
+
+</html>

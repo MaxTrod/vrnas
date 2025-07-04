@@ -1,10 +1,14 @@
 .hero {
   position: relative;
   padding-top: 130px;
-  padding-bottom: 60px;
+  padding-bottom: 75px;
   opacity: 0;
   transform: scale(1.1);
   transition: all 0.7s ease-out;
+
+  @include small-tablet {
+    padding-bottom: 50px;
+  }
 
   &.--watcher-view {
     opacity: 1;
@@ -13,41 +17,41 @@
 
   &::before,
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     pointer-events: none;
   }
 
-
   &::before {
-      right: 0;
-      top: 0;
-      width: 736px;
-      height: 354px;
-      background: url('../img/wave-decor.png') 0 0 / 100% 100% no-repeat;
-    }
+    right: 0;
+    top: 0;
+    display: none;
+    width: 736px;
+    height: 354px;
+    background: url("../img/wave-decor.png") 0 0 / 100% 100% no-repeat;
+  }
 
-    &::after {
-      left: 0;
-      bottom: 105px;
-      width: 1097px;
-      height: 719px;
-      background: url('../img/cell.png') 0 0 / 100% 100% no-repeat;
-    }
+  &::after {
+    left: 0;
+    bottom: 105px;
+    width: 1097px;
+    height: 719px;
+    background: url("../img/cell.png") 0 0 / 100% 100% no-repeat;
+  }
 
-    @include small-tablet {
-      padding-top: 150px;
-      padding-bottom: 50px;
+  @include small-tablet {
+    padding-top: 150px;
+    padding-bottom: 50px;
 
-      &::before {
-        width: 430px;
-        height: 207px;
-      }
+    &::before {
+      width: 430px;
+      height: 207px;
     }
+  }
 
-    &__top {
-      align-items: end;
-    }
+  &__top {
+    align-items: end;
+  }
 
   &__content {
     grid-column: 6 span;
@@ -62,7 +66,6 @@
       padding-bottom: 0;
     }
   }
-
 
   &__images {
     position: relative;
@@ -100,14 +103,14 @@
     align-items: flex-start;
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       left: -46%;
       top: -20%;
       z-index: 1;
       width: 180%;
       height: 180%;
-      background: url('../img/light.png') 0 0 / 100% 100% no-repeat;
+      background: url("../img/light.png") 0 0 / 100% 100% no-repeat;
       pointer-events: none;
     }
 
@@ -117,13 +120,13 @@
   }
 
   &__img {
-      position: relative;
-      z-index: 2;
+    position: relative;
+    z-index: 2;
 
-      @include small-tablet {
-        width: 354px;
-        height: 422px;
-      }
+    @include small-tablet {
+      width: 354px;
+      height: 422px;
+    }
   }
 
   &__header {
@@ -163,22 +166,20 @@
     font: var(--Button-2);
     color: var(--greyscale-grey-2);
 
-
-
     span {
       position: relative;
       font-weight: 600;
       color: var(--greyscale-white);
 
       &::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 15px;
-      width: 48px;
-      height: 7px;
-      background: url('../img/feather-decor.svg') 0 0 / cover  no-repeat;
-    }
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 15px;
+        width: 48px;
+        height: 7px;
+        background: url("../img/feather-decor.svg") 0 0 / cover no-repeat;
+      }
     }
   }
 
@@ -217,13 +218,17 @@
   &__video {
     opacity: 0;
     transform: translateY(0) scale(0.5);
-    transition: opacity 0.7s ease-out,  transform 0.7s ease-out;
+    transition:
+      opacity 0.7s ease-out,
+      transform 0.7s ease-out;
     transition-delay: 2.2s;
 
     .--watcher-view & {
       opacity: 1;
       transform: translateY(0) scale(1);
-      transition: opacity 0.7s ease-out,  transform 0.7s ease-out;
+      transition:
+        opacity 0.7s ease-out,
+        transform 0.7s ease-out;
       transition-delay: 2.2s;
     }
 

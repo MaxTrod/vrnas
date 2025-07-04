@@ -1,0 +1,124 @@
+.team-member {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid transparent;
+  padding: 10px;
+
+  // width: 293px;
+  // height: 389px;
+  min-height: 389px;
+  background: rgba(37, 37, 50, 0.6);
+  transition: all 0.3s;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    mask:
+      linear-gradient(#fff, #fff) padding-box,
+      linear-gradient(#fff, #fff);
+    mask-composite: exclude;
+    border: inherit;
+    transition: opacity 0.3s;
+  }
+
+  &::before {
+    background: var(--main-colors-linear-border) border-box;
+    opacity: 1;
+  }
+
+  &::after {
+    background: var(--main-colors-linear) border-box;
+    opacity: 0;
+  }
+
+  &--big {
+    padding: 12px;
+    min-height: 503px;
+
+    .team-member__inner {
+      padding: 26px;
+    }
+  }
+
+  &__link {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus-visible {
+      border-style: solid;
+      border-width: 1px;
+      border-image: var(--main-colors-linear) 1;
+    }
+  }
+
+  &__inner {
+    position: relative;
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 15px;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(180deg, rgba(50, 70, 188, 0) 0%, #192883 100%);
+    }
+  }
+
+  &__pro {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  &__social {
+    transition:
+      opacity 0.3s,
+      translate 0.3s;
+
+    &:not(:last-child) {
+      margin-bottom: 26px;
+    }
+  }
+
+  &__name {
+    display: inline-block;
+    font: var(--Heading-7);
+    color: var(--greyscale-white);
+  }
+
+  &__pos {
+    display: inline-block;
+    font: var(--Heading-12);
+    color: var(--greyscale-grey-1);
+  }
+
+  @include hover {
+    &::before {
+      opacity: 0;
+    }
+
+    &::after {
+      opacity: 1;
+    }
+  }
+}

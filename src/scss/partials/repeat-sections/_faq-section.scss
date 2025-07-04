@@ -1,15 +1,16 @@
-.start-section {
+.faq-section {
   &__container {
     position: relative;
+    max-width: 824px;
 
     &::before {
       content: "";
       position: absolute;
-      left: -20%;
-      top: 0;
-      z-index: 1;
-      width: 60%;
-      height: 60%;
+      right: -35%;
+      top: -15%;
+      z-index: -1;
+      width: 80%;
+      height: 80%;
       background: url("../img/light.png") 0 0 / 100% 100% no-repeat;
       opacity: 0.7;
       pointer-events: none;
@@ -20,30 +21,15 @@
     }
   }
 
-  &__top {
-    margin: 0 auto;
-    max-width: 810px;
-
+  &__header {
     &:not(:last-child) {
       margin-bottom: 48px;
     }
 
-    @include small-tablet {
+    .header-block__title {
       &:not(:last-child) {
-        margin-bottom: 37px;
+        margin-bottom: 24px;
       }
-    }
-  }
-
-  &__bottom {
-    text-align: center;
-  }
-
-  &__btn {
-    margin-top: 48px;
-
-    @include small-tablet {
-      margin-top: 32px;
     }
   }
 }
