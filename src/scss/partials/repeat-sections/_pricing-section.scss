@@ -1,5 +1,19 @@
 .pricing-section {
   &__header {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -227px;
+      top: -110px;
+      z-index: -1;
+      width: 591px;
+      height: 460px;
+      background: url("../img/light.png") 0 0 / 100% 100% no-repeat;
+      pointer-events: none;
+    }
+
     .header-block__title {
       margin-bottom: 15px;
     }
@@ -14,8 +28,8 @@
 
     @include small-tablet {
       &:not(:last-child) {
-      margin-bottom: 50px;
-    }
+        margin-bottom: 50px;
+      }
     }
   }
 
@@ -184,7 +198,6 @@
     &:not(:last-child) {
       margin-bottom: 12px;
     }
-
   }
 
   &__text {

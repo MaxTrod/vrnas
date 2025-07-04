@@ -2,6 +2,14 @@
   --top1: 57px;
   --top2: 78px;
 
+  &--nondecor {
+    .service-section__header {
+      &::before {
+        display: none;
+      }
+    }
+  }
+
   &__header {
     position: relative;
     z-index: 2;
@@ -9,11 +17,11 @@
     &::before {
       content: "";
       position: absolute;
-      right: -20%;
-      top: -200%;
-      z-index: 1;
-      width: 60%;
-      height: 500%;
+      right: -180px;
+      top: -257px;
+      z-index: -1;
+      width: 650px;
+      height: 550px;
       background: url("../img/light.png") 0 0 / 100% 100% no-repeat;
       opacity: 0.7;
       pointer-events: none;
@@ -214,8 +222,7 @@
     background-color: rgba(255, 255, 255, 0.06);
     opacity: 0;
     transform: translateX(-50%);
-    transition:
-      opacity 0.3s;
+    transition: opacity 0.3s;
 
     span {
       font: var(--Button-1);
@@ -266,4 +273,3 @@
     }
   }
 }
-

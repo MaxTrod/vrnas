@@ -9,7 +9,9 @@
     <main class="main">
       @include('partials/homepage/hero.html')
       @include('partials/homepage/about-section.html')
-      @include('partials/repeat-sections/service-section.html')
+      @include('partials/repeat-sections/service-section.html', {
+        "class": ""
+      })
       <!-- @include('partials/homepage/choose-section.html') -->
        @include('partials/repeat-sections/choose-section.html', {
         "class" : "",
@@ -19,7 +21,9 @@
        })
       @include('partials/homepage/start-section.html')
       @include('partials/repeat-sections/testimonial-section.html')
-      @include('partials/repeat-sections/pricing-section.html')
+      @include('partials/repeat-sections/pricing-section.html', {
+        "class": "pricing-section__nondecor"
+      })
       @include('partials/repeat-sections/partners-section.html')
       @include('partials/homepage/articles-section.html')
       @include('partials/repeat-sections/subscribe-section.html')

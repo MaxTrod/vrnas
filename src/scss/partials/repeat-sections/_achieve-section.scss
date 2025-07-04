@@ -1,0 +1,74 @@
+.achieve-section {
+  &__container {
+    max-width: 913px;
+  }
+
+  &__list {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 36px;
+
+    @include small-tablet {
+      flex-direction: column;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: -1;
+      width: 180%;
+      height: 250%;
+      background: url("../img/grey-light.png") 0 0 / 100% 100% no-repeat;
+      pointer-events: none;
+      translate: -50% -50%;
+
+      @include small-tablet {
+        width: 110%;
+        height: 145%;
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+}
+
+.item-achieve {
+  &__label,
+  &__quantity {
+    display: inline-block;
+  }
+
+  &__label {
+    font: var(--Caption-1);
+    letter-spacing: 0.14em;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    background-image: var(--main-colors-linear);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  &__quantity {
+    margin: 0;
+    font: var(--Heading-2);
+    color: var(--greyscale-white);
+
+    @include tablet {
+      font: var(--Heading-3);
+    }
+
+    @include small-tablet {
+      font: var(--Heading-5);
+    }
+  }
+}

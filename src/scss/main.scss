@@ -27,12 +27,14 @@
 @import "./partials/repeat-sections/header";
 
 // общие секции
+@import "./partials/repeat-sections/page-hero";
 @import "./partials/repeat-sections/service-section";
 @import "./partials/repeat-sections/choose-section";
 @import "./partials/repeat-sections/testimonial-section";
 @import "./partials/repeat-sections/pricing-section";
 @import "./partials/repeat-sections/partners-section";
 @import "./partials/repeat-sections/faq-section";
+@import "./partials/repeat-sections/achieve-section";
 
 // главная страница
 @import "./partials/homepage/hero";
@@ -41,7 +43,6 @@
 @import "./partials/homepage/articles-section";
 
 // страница about
-@import "./partials/about-page/hero-about";
 @import "./partials/about-page/about-us-section";
 @import "./partials/about-page/choose-us-section";
 @import "./partials/about-page/team-about";

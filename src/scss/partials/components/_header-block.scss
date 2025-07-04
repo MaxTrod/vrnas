@@ -1,9 +1,9 @@
 .header-block {
-    &--centered {
-      text-align: center;
-    }
+  &--centered {
+    text-align: center;
+  }
 
-    &__label {
+  &__label {
     display: inline-block;
     font: var(--Caption-1);
     letter-spacing: 0.14em;
