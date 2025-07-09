@@ -2,39 +2,23 @@
   <div class="container start-section__container">
     <div class="start-section__top">
       <div class="header-block header-block--centered">
-        <div class="header-block__label">How to get started</div>
-        <h2 class="header-block__title">Bringing Your Virtual Reality Dreams to Life</h2>
+        <div class="header-block__label">@headerLabel</div>
+        <h2 class="header-block__title">@headerTitle</h2>
       </div>
     </div>
     <div class="start-section__bottom">
       <div class="start-section__video-block video-block" data-video-block="start">
         <div class="video-block__info">
-          <a class="video-block__category post-category" href="#">VR Service</a>
-          <h3 class="video-block__title">How to get started</h3>
+          <a class="video-block__category post-category" href="#">@videoCat</a>
+          <h3 class="video-block__title">@videoTitle</h3>
         </div>
-        <button class="btn-reset video-block__play lazy-play" data-lazy-btn="start" data-video-src="get-started.mp4">
+        <button class="btn-reset video-block__play lazy-play" data-lazy-btn="start" data-video-src="@videoSrc">
         <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M50 0C77.6142 0 100 22.3858 100 50C100 77.6142 77.6142 100 50 100C22.3858 100 0 77.6142 0 50C0 22.3858 22.3858 0 50 0ZM42.1875 31.6602C40.1042 30.4957 37.5 31.9514 37.5 34.2803V65.7197C37.5 68.0486 40.1042 69.5043 42.1875 68.3398L70.3125 52.6201C72.3958 51.4557 72.3958 48.5443 70.3125 47.3799L42.1875 31.6602Z"/>
         </svg>
-          <!-- <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-              <filter id="blurMe">
-              <feGaussianBlur in="SourceGraphic" stdDeviation="20" />
-            </filter>
-            <defs>
-              <mask id="cutout-triangle" maskUnits="userSpaceOnUse">
-                <rect width="100" height="100" fill="white" />
-                <path
-                  d="M42.1875 31.6602C40.1042 30.4957 37.5 31.9514 37.5 34.2803V65.7197C37.5 68.0486 40.1042 69.5043 42.1875 68.3398L70.3125 52.6201C72.3958 51.4557 72.3958 48.5443 70.3125 47.3799L42.1875 31.6602Z"
-                  fill="black"/>
-              </mask>
-            </defs>
-
-            <circle cx="50" cy="50" r="50" fill="rgba(255,255,255, 0.9)" fill-opacity="1" mask="url(#cutout-triangle)" filter="url(#blurMe)" />
-          </svg> -->
         </button>
-        <div class="video-block__movie-block lazy-video" data-lazy-video="start"></div>
-        <!-- <video class="video-block__movie video-js vjs-theme-fantasy" id="video-main" src="get-started.mp4" width="100%" height="522" controls muted></video> -->
-      </div>
+        <div class="video-block__movie-block lazy-video" data-lazy-video="start" style="background-image: url('@videoThumb');"></div>
+      </div'
       <a class="start-section__btn btn" href="#">
         <span>get started</span>
       </a>

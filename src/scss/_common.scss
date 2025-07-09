@@ -67,3 +67,23 @@
     font: var(--Heading-11);
   }
 }
+
+.advantages-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 14px;
+
+  &:not(:last-child) {
+    margin-bottom: 32px;
+  }
+
+  &__item {
+    position: relative;
+    padding-left: 28px;
+    font: var(--Body-3);
+    color: var(--greyscale-white);
+    background-position: left 5px;
+    background-size: 16px;
+    background-repeat: no-repeat;
+  }
+}

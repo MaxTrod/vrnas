@@ -10,3 +10,4 @@ import './components/orbit.js';
 import './components/sliders.js';
 import './components/custom-scroll-bar.js';
 import './components/common.js';
+import './components/tabs.js';

@@ -1,4 +1,10 @@
 .pricing-section {
+  &--nondecor {
+    .pricing-section__header::before {
+      display: none;
+    }
+  }
+
   &__header {
     position: relative;
 

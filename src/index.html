@@ -10,19 +10,26 @@
       @include('partials/homepage/hero.html')
       @include('partials/homepage/about-section.html')
       @include('partials/repeat-sections/service-section.html', {
-        "class": ""
+      "class": ""
       })
       <!-- @include('partials/homepage/choose-section.html') -->
-       @include('partials/repeat-sections/choose-section.html', {
-        "class" : "",
-        "srcImg" : "img/man-karate.png",
-        "width": "563",
-        "height": "662"
-       })
-      @include('partials/homepage/start-section.html')
+      @include('partials/repeat-sections/choose-section.html', {
+      "class" : "",
+      "srcImg" : "img/man-karate.png",
+      "width": "563",
+      "height": "662"
+      })
+      @include('partials/homepage/start-section.html', {
+      "headerLabel" : "How to get started",
+      "headerTitle" : "Bringing Your Virtual Reality Dreams to Life",
+      "videoCat" : "VR Service",
+      "videoTitle" : "How to get started",
+      "videoThumb" : "img/get-started-poster.png",
+      "videoSrc" : "get-started.mp4",
+      })
       @include('partials/repeat-sections/testimonial-section.html')
       @include('partials/repeat-sections/pricing-section.html', {
-        "class": "pricing-section__nondecor"
+      "class": "pricing-section--nondecor"
       })
       @include('partials/repeat-sections/partners-section.html')
       @include('partials/homepage/articles-section.html')

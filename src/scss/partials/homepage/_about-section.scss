@@ -160,39 +160,4 @@
       margin-bottom: 24px;
     }
   }
-
-  &__list {
-    display: flex;
-    flex-direction: column;
-    row-gap: 14px;
-
-    &:not(:last-child) {
-      margin-bottom: 32px;
-    }
-  }
-
-  &__item {
-    position: relative;
-    padding-left: 28px;
-    font: var(--Body-3);
-    color: var(--greyscale-white);
-
-    &::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 5px;
-      -webkit-mask-image: url('../img/sprite.svg#check');
-      mask-image: url('../img/sprite.svg#check');
-      -webkit-mask-position: center;
-      mask-position: center;
-      -webkit-mask-repeat: no-repeat;
-      mask-repeat: no-repeat;
-      -webkit-mask-size: cover;
-      mask-size: cover;
-      width: 16px;
-      height: 16px;
-      background-image: var(--main-colors-linear);
-    }
-  }
 }

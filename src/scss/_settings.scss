@@ -15,6 +15,7 @@
   margin: 0;
   height: 100%;
   min-width: var(--min-width);
+
   // min-width: $minWidth;
   font-weight: 400;
   font-size: 16px;
@@ -33,7 +34,7 @@ a {
 }
 
 .site-container {
-    // overflow: hidden;
+  // overflow: hidden;
   // если используете на сайте position: sticky - уберите эту настройку
 
   display: flex;
@@ -91,6 +92,7 @@ a {
 
 .container {
   margin: 0 auto;
+
   // padding: 0 var(--container-offset);
   padding: 0 calc(var(--container-offset) / 2);
   max-width: var(--container-width);

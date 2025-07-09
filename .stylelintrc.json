@@ -6,7 +6,6 @@
   "rules": {
     "order/order": [
       "custom-properties",
-      "dollar-variables",
       "at-rules"
     ],
     "order/properties-alphabetical-order": null,
@@ -442,6 +441,7 @@
     "scss/at-else-closing-brace-space-after": "always-intermediate",
     "scss/at-else-empty-line-before": "never",
     "scss/at-else-if-parentheses-space-before": "always",
+    "scss/at-rule-conditional-no-parentheses": null,
     "scss/at-extend-no-missing-placeholder": null,
     "scss/at-function-parentheses-space-before": "never",
     "scss/at-function-pattern": null,
@@ -541,7 +541,7 @@
         "severity": "warning"
       }
     ],
-    "number-max-precision": 5,
+    "number-max-precision": 10,
     "property-no-unknown": [
       true,
       {

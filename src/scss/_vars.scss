@@ -6,8 +6,10 @@
   --min-width: 430px;
   --template-width: 1440px;
   --content-width: 1200px;
+
   // --container-offset: 16px;
   --container-offset: 32px;
+
   // --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
   --container-width: calc(var(--content-width) + var(--container-offset));
 
@@ -61,10 +63,13 @@
 
 // Мінімальна ширина сторінки
 $minWidth: 430px;
+
 // Ширина полотна (макету)
 $templateWidth: 1440px;
+
 // Ширина обмежуючого контейнера (0 = немає обмеження)
 $contentWidth: 1200px;
+
 // Загальний відступ у контейнера
 // (30 = по 15px ліворуч і праворуч, 0 = немає відступу)
 $containerOffset: 32px;

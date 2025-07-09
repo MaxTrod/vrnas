@@ -274,6 +274,32 @@ if (document.querySelector('.partners-section')) {
   partnerOrbit();
 }
 
+if (document.querySelector('.design-section')) {
+  document.addEventListener('click', designOrbit);
+
+  function designOrbit(e) {
+    const targetElement = e.target;
+    if (targetElement.closest('.design-orbit__btn')) {
+      const btnCategory = targetElement.closest('.design-orbit__btn');
+      if (!btnCategory.classList.contains('active')) {
+        const activeBtnCategory = document.querySelector('.design-orbit__btn.active');
+        activeBtnCategory.classList.remove('active');
+        btnCategory.classList.add('active');
+
+        const blockInfo = document.querySelectorAll('.block-info');
+        const activeBlockInfo = document.querySelector('.block-info.active');
+
+        activeBlockInfo.classList.remove('active');
+        blockInfo[getIndex(btnCategory)].classList.add('active');
+      }
+    }
+
+  }
+  function getIndex(el) {
+    return Array.from(el.parentNode.children).indexOf(el);
+  }
+}
+
 
 
 

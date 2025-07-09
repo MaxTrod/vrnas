@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" class="page">
+
+@include('partials/repeat-sections/head.html')
+
+<body class="page__body">
+  <div class="site-container">
+    @include('partials/repeat-sections/header.html')
+    <main class="main">
+      @include('partials/detail-page/hero-detail.html')
+      @include('partials/detail-page/design-section.html')
+      @include('partials/homepage/start-section.html', {
+      "headerLabel" : "Our vr design project",
+      "headerTitle" : "Revolutionize Your Experience with Our Cutting-Edge VR Design Project",
+      "videoCat" : "VR Design",
+      "videoTitle" : "VR Design Projects",
+      "videoThumb" : "img/vr-design-poster.jpg",
+      "videoSrc" : "project-video.mp4",
+      })
+      @include('partials/repeat-sections/pricing-section.html', {
+      "class": "pricing-section--nondecor"
+      })
+      @include('partials/repeat-sections/subscribe-section.html')
+    </main>
+    @include('partials/repeat-sections/footer.html')
+    @include('partials/components/modals.html')
+  </div>
+</body>
+
+</html>
