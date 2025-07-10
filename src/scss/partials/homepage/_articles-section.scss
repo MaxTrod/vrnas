@@ -38,10 +38,6 @@
     justify-content: space-between;
     gap: 30px;
 
-    .header-block__btn {
-      background-color: rgba(255, 255, 255, 0.06);
-    }
-
     &:not(:last-child) {
       margin-bottom: 72px;
     }

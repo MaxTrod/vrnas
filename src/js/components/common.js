@@ -45,3 +45,8 @@ if (document.querySelectorAll('.item-service')) {
     })
   }
 }
+
+if(document.querySelector('.tariff-plan')) {
+  
+}
+

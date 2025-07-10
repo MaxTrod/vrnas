@@ -1,0 +1,147 @@
+.price-plan {
+  &__header {
+    margin: 0 auto;
+    max-width: 750px;
+
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+
+    .header-block__title {
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  &__tariffs {
+    row-gap: 32px;
+
+    @include tablet {
+      padding: 0 16px;
+    }
+  }
+
+  &__tariff {
+    grid-column: 4 span;
+
+    @include tablet {
+      grid-column: 6 span;
+    }
+
+    @include small-tablet {
+      grid-column: 12 span;
+    }
+  }
+}
+
+.tariff-plan {
+  &__link {
+    position: relative;
+    display: block;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    padding: 35px;
+    color: var(--greyscale-white);
+    background-color: var(--greyscale-black-80);
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      mask:
+        linear-gradient(#fff, #fff) padding-box,
+        linear-gradient(#fff, #fff);
+      mask-composite: exclude;
+      border: inherit;
+      border-radius: inherit;
+      background: var(--main-colors-linear) border-box;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus-visible {
+      &::before {
+        opacity: 1;
+      }
+
+      .tariff-plan__btn {
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+
+    @include hover {
+      &::before {
+        opacity: 1;
+      }
+
+      .tariff-plan__btn {
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+
+    &:active {
+      &::before {
+        opacity: 0;
+      }
+
+      .tariff-plan__btn {
+        &::before {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  &__type {
+    margin-bottom: 9px;
+    font: var(--Heading-9);
+  }
+
+  &__price {
+    margin-bottom: 9px;
+    font: var(--Heading-1);
+
+    span {
+      font: var(--Body-1);
+      color: #71717a;
+    }
+  }
+
+  &__descr {
+    margin-bottom: 16px;
+
+    p {
+      margin: 0;
+      font: var(--Body-3);
+      color: var(--greyscale-grey-1);
+    }
+  }
+
+  &__options {
+    margin-bottom: 50px;
+  }
+
+  &__option {
+    padding-left: 26px;
+    font: var(--Heading-11);
+    background: url("../img/svg-no-sprite/price-check.svg") 0 3px / 16px no-repeat;
+
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__btn {
+    background-color: rgba(255, 255, 255, 0.06);
+    pointer-events: none;
+  }
+}
