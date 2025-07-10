@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" class="page">
+
+@include('partials/repeat-sections/head.html')
+
+<body class="page__body">
+  <div class="site-container">
+    @include('partials/repeat-sections/header.html')
+    <main class="main">
+      @include('partials/blog-page/blog-hero.html')
+      @include('partials/blog-page/blog-section.html')
+      @include('partials/repeat-sections/subscribe-section.html')
+    </main>
+    @include('partials/repeat-sections/footer.html')
+    @include('partials/components/modals.html')
+  </div>
+</body>
+
+</html>

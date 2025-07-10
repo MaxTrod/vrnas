@@ -1,0 +1,133 @@
+.blog-section {
+  &__items {
+    row-gap: 32px;
+
+    &:not(:last-child) {
+      margin-bottom: 64px;
+    }
+  }
+
+  &__item {
+    grid-column: 4 span;
+
+    @include tablet {
+      grid-column: 6 span;
+    }
+
+    @include small-tablet {
+      grid-column: 12 span;
+    }
+  }
+}
+
+.blog-post {
+  background-color: var(--greyscale-black-80);
+
+  &__img-link {
+    display: block;
+    overflow: hidden;
+    color: var(--greyscale-white);
+
+    @include focus-visible;
+
+    @include hover {
+      .blog-post__img {
+        scale: 1.05;
+      }
+    }
+  }
+
+  &__img {
+    width: 100%;
+    transition: scale 0.3s;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 24px 32px;
+  }
+
+  &__category {
+    margin-bottom: 12px;
+  }
+
+  &__link-title {
+    margin-bottom: 20px;
+  }
+
+  &__link {
+    position: relative;
+    display: inline-block;
+    font: var(--Caption-1);
+    letter-spacing: 0.14em;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    color: var(--greyscale-white);
+    background-image: var(--main-colors-linear);
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      background: var(--main-colors-linear);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    @include focus-visible;
+
+    @include hover {
+      &::before {
+        opacity: 1;
+      }
+    }
+
+    &:active {
+      &::before {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-style: solid;
+    border-width: 1px;
+    border-image: var(--main-colors-linear) 1;
+    width: 34px;
+    height: 34px;
+    font-size: 14px;
+    letter-spacing: -0.01em;
+    color: var(--greyscale-white);
+    opacity: 0.5;
+    transition: opacity 0.3s;
+
+    &--current {
+      opacity: 1;
+    }
+
+    @include focus-visible;
+
+    @include hover {
+      opacity: 1;
+    }
+
+    &:active {
+      opacity: 0;
+    }
+  }
+}
