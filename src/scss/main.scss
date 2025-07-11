@@ -56,6 +56,11 @@
 // страница blog
 @import "./partials/blog-page/blog-section";
 
+// страница post
+@import "./partials/post-page/post";
+@import "./partials/post-page/hero-post";
+@import "./partials/post-page/post-content";
+
 // подвал сайта
 @import "./partials/repeat-sections/footer";
 

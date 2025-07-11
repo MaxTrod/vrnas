@@ -1,22 +1,25 @@
 .breadcrumbs {
   display: flex;
   align-items: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
   gap: 10px;
 
   &__item {
     position: relative;
+    flex: 0 0 auto;
 
     &:not(:last-child) {
       padding-right: 15px;
 
       &::after {
-        content: '';
+        content: "";
         position: absolute;
         right: 0;
         top: 50%;
-        width: 6px;
-        height: 9px;
-        background: url('../img/svg-no-sprite/menu-arrow.svg') 0 0 / 100% 100% no-repeat;
+        width: 9px;
+        height: 6px;
+        background: url("../img/svg-no-sprite/menu-arrow.svg") 0 0 / 100% 100% no-repeat;
         rotate: -90deg;
         translate: 0 -50%;
       }

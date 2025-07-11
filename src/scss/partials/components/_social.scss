@@ -12,6 +12,27 @@
     }
   }
 
+  &--post {
+    .social__link {
+      border-radius: 0;
+      width: auto;
+      height: auto;
+
+      &::before {
+        display: none;
+      }
+
+      @include hover {
+        background-color: transparent;
+        opacity: 0.5;
+      }
+
+      &:active {
+        opacity: 1;
+      }
+    }
+  }
+
   &__link {
     position: relative;
     display: flex;
@@ -23,7 +44,7 @@
     height: 46px;
     color: var(--greyscale-white);
     background-color: var(--greyscale-black-100);
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, opacity 0.3s;
 
     &::before {
       content: "";

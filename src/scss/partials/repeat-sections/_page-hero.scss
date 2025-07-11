@@ -1,4 +1,28 @@
 .page-hero {
+  &--post {
+    .page-hero__container {
+      position: relative;
+      justify-content: flex-start;
+      padding-top: 164px;
+      padding-bottom: 52px;
+
+      @include small-tablet {
+        padding-top: 106px;
+        padding-bottom: 43px;
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+
+    .page-hero__inner {
+      &::before {
+        display: none;
+      }
+    }
+  }
+
   &__container {
     position: relative;
     display: flex;

@@ -1,0 +1,155 @@
+.post-content {
+  padding-bottom: 75px;
+
+  @include small-tablet {
+    padding-bottom: 50px;
+  }
+
+  &__wrapper {
+    grid-column: 8 span;
+
+    @include tablet {
+      grid-column: 7 span;
+    }
+
+    @include small-tablet {
+      grid-column: 12 span;
+      margin-bottom: 100px;
+    }
+  }
+
+  &__sidebar {
+    grid-column: 4 span;
+    padding-left: 43px;
+
+    @include tablet {
+      grid-column: 5 span;
+      padding-left: 0;
+    }
+
+    @include small-tablet {
+      grid-column: 12 span;
+    }
+  }
+}
+
+.post {
+  &__header {
+    margin-bottom: 30px;
+  }
+
+  &__category-post {
+    margin-bottom: 14px;
+  }
+
+  &__title {
+    margin-bottom: 12px;
+  }
+
+  &__meta-post {
+    margin-bottom: 24px;
+  }
+
+  &__content {
+    margin-bottom: 24px;
+
+    p {
+      margin: 0;
+      font: var(--Body-1);
+      color: var(--greyscale-grey-2);
+
+      &:not(:last-child) {
+        margin-bottom: 24px;
+      }
+    }
+
+    img {
+      display: inline-block;
+      margin: 56px 0 80px;
+      aspect-ratio: 377 / 255;
+
+      @include tablet {
+        margin: 8px 0 32px;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__img-wrap {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 34px;
+
+    @include tablet {
+      gap: 17px;
+    }
+  }
+
+  &__tags {
+    margin-bottom: 17px;
+  }
+
+  &__tags-title {
+    margin: 0;
+    margin-bottom: 10px;
+    font: var(--Heading-10);
+    color: var(--greyscale-white);
+  }
+
+  &__tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    font: var(--Body-1);
+    -webkit-text-fill-color: transparent;
+    background-image: var(--main-colors-linear);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  &__tags-link {
+    color: var(--greyscale-white);
+
+    @include focus-visible;
+  }
+
+  &__share-title {
+    margin: 0;
+    margin-bottom: 10px;
+    font: var(--Heading-10);
+    color: var(--greyscale-white);
+  }
+}
+
+.post-meta {
+  display: inline-flex;
+  font: var(--Caption-1);
+  letter-spacing: 0.14em;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  background-image: var(--main-colors-linear);
+  -webkit-background-clip: text;
+  background-clip: text;
+  gap: 5px;
+}
+
+.sidebar {
+  > * {
+    &:not(:last-child) {
+      margin-bottom: 64px;
+    }
+  }
+
+  &__articles-title {
+    margin-bottom: 0;
+  }
+
+  &__hashtags-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}
