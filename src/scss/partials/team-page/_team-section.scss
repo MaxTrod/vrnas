@@ -1,0 +1,21 @@
+.team-section {
+  &__header {
+    margin-bottom: 48px;
+  }
+
+  &__list {
+    row-gap: 32px;
+  }
+
+  &__item {
+    grid-column: 4 span;
+
+    @include tablet {
+      grid-column: 6 span;
+    }
+
+    @include small-tablet {
+      grid-column: 12 span;
+    }
+  }
+}
